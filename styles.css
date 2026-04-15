@@ -5,7 +5,7 @@
 
 h1 {
     font-family: "Kings", cursive;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     font-size: 100px;
     color: white;
@@ -98,7 +98,6 @@ header {
 }
 
 #options li:hover::before {
-    /* code for the quilt to appear but not working*/
     content: "";
     position: absolute;
     left: 0;
