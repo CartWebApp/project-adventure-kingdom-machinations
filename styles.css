@@ -10,6 +10,7 @@ h1 {
     font-size: 100px;
     color: white;
     -webkit-text-stroke: 2px black;
+    z-index: 11;
 }
 
 nav {
@@ -33,22 +34,21 @@ header {
 }
 
 .border-container {
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     z-index: 10;
 }
 
 .border-img {
-    width: 60%;
+    width: 80%;
     height: auto;
     display: block;
     margin-bottom: 3vh;
 }
 
 #index-parchment {
-    width: 50%;
+    width: 40%;
     margin-top: -20px;
     display: flex;
     justify-content: center;
@@ -97,7 +97,8 @@ header {
     padding-left: 30px;
 }
 
-#options li:hover::before { /* code for the quilt to appear but not working*/
+#options li:hover::before {
+    /* code for the quilt to appear but not working*/
     content: "";
     position: absolute;
     left: 0;
@@ -105,7 +106,27 @@ header {
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    background-image: url('quilt.png');
+    background-image: url('images/quilt.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.curtains {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/*hard-coded the width so on other computers the curtain will be missaligned 
+here at [width] */
+#left-facing-curtain,
+#right-facing-curtain {
+    width: 85%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
