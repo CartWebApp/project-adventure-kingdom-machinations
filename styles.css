@@ -7,7 +7,7 @@ h1 {
     font-family: "Kings", cursive;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(40px, 5vw, 120px);
+    font-size: clamp(40px, 7vw, 120px);
     color: white;
     -webkit-text-stroke: 2px black;
     z-index: 11;
@@ -39,6 +39,8 @@ nav {
     height: auto;
     display: block;
     margin-bottom: 3vh;
+    background-image: url(./backgrounds/cover.avif);
+    background-size: cover;
 }
 
 #index-parchment {
