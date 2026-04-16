@@ -1,11 +1,13 @@
-import {Player, Item} from "/classes.js";
+import {Player, Item} from "./scripts/classes.js";
+
+const scene = document.getElementById("scene");
 
 let isReading = true;
 let isChoosing = false;
 
 const story = {
     intro: {
-        background: "",
+        background: "./background/battle-vision.avif",
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!”`,
@@ -13,12 +15,67 @@ const story = {
         ],
 
         choices: [
-            {text: "", scene: "", nextStep: "Intro2W", HP: 0, STR: 1, INT: -1, SPD: 0, FORT: 0, SAN: 0},
-            {text: "", scene: "", nextStep: "Intro2w", HP: 0, STR: 1, INT: -1, SPD: 0, FORT: 0, SAN: 0},
-            {text: "", scene: "", nextStep: "", HP: 0, STR: 1, INT: -1, SPD: 0, FORT: 0, SAN: 0}
+            {text: "Attack the men", scene: "", nextStep: "Intro2W", impact: [0,0,0,0,0,0]},
+            {text: "Try and talk things out", scene: "", nextStep: "Intro2H", impact: [0,0,0,0,0,0]},
+            {text: "Set down your weapon", scene: "", nextStep: "Intro2T", impact: [0,0,0,0,0,0]}
+        ]
+    },
+
+    intro2W: {
+        background: "./background/battle-vision.avif",
+        text: [
+            "You reason that you would rather fight than get captured, and you try to fight against the force keeping your body still. The moment you so much as twitch, the men quickly attack.",
+            `“UGH-”`,
+            `Suddenly, you awake with your fist in the air. It was a nightmare, one that had persisted your entire life. It was strange; you had never been on a battlefield before.`,
+            `[+5 fortitude, -5 intelligence]`
+        ],
+
+        choices: [
+            {text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [0,0,0,0,0,0]},
+            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
+            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
+        ]
+    },
+
+    intro2H: {
+        background: "./background/battle-vision.avif",
+        text: [
+            `You reason that talking things out would be best. You try to open your mouth to no avail. The man in front of you steps forward. He readies his spear, “Screw this.”`,
+            `“...”`,
+            `Suddenly, you're in bed. It was a vision, one that had appeared constantly your entire life. It was strange; you had never been on a battlefield before.`,
+            `[+5 intelligence]`
+        ],
+
+        choices: [
+            {text: "Read a book to calm down", scene: "", nextStep: "dailyH", impact: [0,0,0,0,0,0]},
+            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
+            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
+        ]
+    },
+
+    intro2T: {
+        background: "./background/battle-vision.avif",
+        text: [
+            `You reason that you should surrender; it would probably lead to your survival in this situation. You fight against your sluggish body to set the weapon down. The moment you so much as twitch, the men swiftly attack.`,
+            `“AHH-”`,
+            `Suddenly, you awake with your hand on your heart. It was a vision, one that had appeared constantly your entire life. It was strange; you had never been on a battlefield before.`,
+            `[-5 fortitude, +5 intelligence]`
+        ],
+
+        choices: [
+            {text: "Go back to sleep", scene: "", nextStep: "dailyT", impact: [0,0,0,0,0,0]},
+            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
+            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
         ]
     }
 }
 
+document.addEventListener("click", ()=>{
+    
+})
+
 const newPlayer =  new Player(1, [1,2,3,4,5], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], ["intro", "intro2W"])
 console.log(newPlayer);
+newPlayer.stats.forEach(stat => {
+    console.log(stat);
+});
