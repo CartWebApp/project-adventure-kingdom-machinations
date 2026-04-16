@@ -15,51 +15,25 @@ newGame.addEventListener("click", ()=>{
     scenePlaythrough(story.intro);
 })
 
+
+/*
 const newPlayer =  new Player(1, [1,2,3,4,5], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], ["intro", "intro2W"])
 console.log(newPlayer);
 newPlayer.stats.forEach(stat => {
     console.log(stat);
 });
 
+tesing out layout of player class
+*/
 
 
 //advance text functions and game modifications on user input
-function generateScene(scene){
-    const background = document.getElementById("scene");
-    background.style.backgroundImage = `url(${scene.background})`;
-}
-
-function generateOptions(choices){ //will take an array
-    if (isReading) return;
-
-    options.innerHTML = ``; //clears textbox
-
-    choices.forEach((choice, index) => {
-    choice = document.createElement("li"); //creating choices
-        choice.innerHTML = `${choice.text}`;
-        options.appendChild(choice);
-
-        choice.addEventListener("click", () => {
-
-        })
-
-    });
-}
-
-function advanceText(event){ //array of story
-    if (!isReading) return; //if not viewing text, function does nothing
-
-    options.innerHTML = `${event.text[clicks]}`; //insert into textbox
-    console.log("option was clicked")
-}
 
 function scenePlaythrough(event){
     const options = document.getElementById("options");
     isReading = true;
     clicks = 0;
-
-    generateScene(event);
-
+    
 
     options.addEventListener("click", () => {
         console.log(`${clicks}`);
@@ -69,9 +43,43 @@ function scenePlaythrough(event){
         }
         console.log(`isReading is "${isReading}"`);
 
+        generateScene(event);
         advanceText(event);
         generateOptions(event.choices);
 
         clicks++;
     })
 }
+
+function generateScene(scene){
+    const background = document.getElementById("scene");
+    background.style.backgroundImage = `url(${scene.background})`;
+}
+
+
+function generateOptions(choices){ //will take an array
+    if (isReading) return;
+
+    options.innerHTML = ``; //clears textbox
+
+    choices.forEach((choice) => {
+        let option = document.createElement("li"); //creating choices
+        option.innerHTML = `${choice.text}`;
+        options.appendChild(option);
+
+        option.addEventListener("click", () => {
+            console.log("An option was clicked")
+            scenePlaythrough(story[choice.nextStep]);
+        })
+
+    });
+}
+
+
+function advanceText(event){ //array of story
+    if (!isReading) return; //if not viewing text, function does nothing
+
+    options.innerHTML = `${event.text[clicks]}`; //insert into textbox
+    console.log("clicked")
+}
+

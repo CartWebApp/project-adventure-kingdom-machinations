@@ -8,14 +8,14 @@ export const story = {
         ],
 
         choices: [
-            {text: "Attack the men", scene: "", nextStep: "Intro2W", impact: [0,0,0,0,0,0]},
-            {text: "Try and talk things out", scene: "", nextStep: "Intro2H", impact: [0,0,0,0,0,0]},
-            {text: "Set down your weapon", scene: "", nextStep: "Intro2T", impact: [0,0,0,0,0,0]}
+            {text: "Attack the men", scene: "", nextStep: "intro2W", impact: [0,0,0,0,0,0]},
+            {text: "Try and talk things out", scene: "", nextStep: "intro2H", impact: [0,0,0,0,0,0]},
+            {text: "Set down your weapon", scene: "", nextStep: "intro2T", impact: [0,0,0,0,0,0]}
         ]
     },
 
     intro2W: {
-        background: "./background/battle-vision.avif",
+        background: "/backgrounds/battle-vision.avif",
         text: [
             "You reason that you would rather fight than get captured, and you try to fight against the force keeping your body still. The moment you so much as twitch, the men quickly attack.",
             `“UGH-”`,
@@ -31,7 +31,7 @@ export const story = {
     },
 
     intro2H: {
-        background: "./background/battle-vision.avif",
+        background: "/backgrounds/battle-vision.avif",
         text: [
             `You reason that talking things out would be best. You try to open your mouth to no avail. The man in front of you steps forward. He readies his spear, “Screw this.”`,
             `“...”`,
@@ -47,7 +47,7 @@ export const story = {
     },
 
     intro2T: {
-        background: "./background/battle-vision.avif",
+        background: "/backgrounds/battle-vision.avif",
         text: [
             `You reason that you should surrender; it would probably lead to your survival in this situation. You fight against your sluggish body to set the weapon down. The moment you so much as twitch, the men swiftly attack.`,
             `“AHH-”`,
