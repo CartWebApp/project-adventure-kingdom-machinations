@@ -7,7 +7,7 @@ h1 {
     font-family: "Kings", cursive;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(40px, 5vw, 120px);
+    font-size: clamp(40px, 7vw, 120px);
     color: white;
     -webkit-text-stroke: 2px black;
     z-index: 11;
@@ -39,6 +39,8 @@ nav {
     height: auto;
     display: block;
     margin-bottom: 3vh;
+    background-image: url(./backgrounds/cover.avif);
+    background-size: cover;
 }
 
 #index-parchment {
@@ -114,8 +116,6 @@ nav {
     overflow-x: hidden;
 }
 
-/*hard-coded the width so on other computers the curtain will be missaligned 
-here at [width] */
 #left-facing-curtain,
 #right-facing-curtain {
     width: 85%;
@@ -123,3 +123,32 @@ here at [width] */
     object-fit: cover;
     flex-shrink: 0;
 }
+/* start of the overlay css */
+li {
+    position: relative;
+}
+
+.import-content {
+    position: absolute; 
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    list-style: none;
+    display: none;
+  }
+  
+  .clickable-import {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15; 
+    text-decoration: none;
+  }
+
+  li:hover .overlay {
+    display: block; 
+  }
+  
