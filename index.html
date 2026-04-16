@@ -6,25 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdom Machinations</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Kings-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Jacquard 24-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Kings&display=swap" rel="stylesheet">
 </head>
 
 <body id="index-body">
+    <section class="curtains">
+        <div id="right-facing-curtain">
+            <img src="images/right-facing-curtain.png">
+        </div>
+        <div id="left-facing-curtain">
+            <img src="images/left-facing-curtain.png">
+        </div>
+    </section>
     <nav>
         <h1>Kingdom Machinations</h1>
     </nav>
 
-    <header>
-        <div class="border-place"></div>
+    <header class="border-container">
+        <img src="images/border.png" alt="Decorative Border" class="border-img">
     </header>
 
-    <section id="textBox">
-        <ul id="options">
-
-        </ul>
+    <section class="background">
+        <!--idk if you would want to use JS here so ill wait-->
     </section>
+
+    <div id="index-parchment">
+        <section id="textBox">
+            <img src="images/parchment.png" alt="Parchment Background">
+
+            <ul id="options">
+
+                <li>New Game</li>
+
+                <li>Load Game</li>
+
+                <a href="import-overlay.html"> Import Game </a>
+
+                <li>Export Game</li>
+
+            </ul>
+
+        </section>
+    </div>
 
     <script src="story.js" type="module"></script>
 </body>
