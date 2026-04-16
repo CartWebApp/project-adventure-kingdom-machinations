@@ -1,13 +1,6 @@
-import {Player, Item} from "./scripts/classes.js";
-
-const scene = document.getElementById("scene");
-
-let isReading = true;
-let isChoosing = false;
-
-const story = {
+export const story = {
     intro: {
-        background: "./background/battle-vision.avif",
+        background: `/backgrounds/battle-vision.avif`,
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!”`,
@@ -69,13 +62,3 @@ const story = {
         ]
     }
 }
-
-document.addEventListener("click", ()=>{
-    
-})
-
-const newPlayer =  new Player(1, [1,2,3,4,5], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], ["intro", "intro2W"])
-console.log(newPlayer);
-newPlayer.stats.forEach(stat => {
-    console.log(stat);
-});
