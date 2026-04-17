@@ -159,6 +159,6 @@ p {
     width: 90%;
 }
 
-#whatever-the-name-says-one {
-    
+#menuNavigation {
+    z-index: 12;
 }
