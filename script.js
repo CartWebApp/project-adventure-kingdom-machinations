@@ -8,6 +8,7 @@ const gameContinuation = document.getElementById("continue-game");
 const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
+const openSaveOverlay = document.getElementById("load-nav");
 
 
 let isReading = true;
@@ -77,11 +78,17 @@ function advanceText(event){ //array of story
 
 
 //save functions
+openSaveOverlay.addEventListener("click", () => {
+    document.getElementById("saveFiles").classList.remove("saveNotActive");
+})
+
 console.log(saveFile);
 saveFile.forEach((file, index) => {
     file.addEventListener("click", () => {
         let playerFile = pullSaveFiles();
-        playerFile[index];
+        playerFile[index] = currentPlayer;
+
+        localStorage.setItem("savedPlayers", JSON.stringify(playerFile))
         console.log(`Save file #${index} was clicked`);
     })
 
