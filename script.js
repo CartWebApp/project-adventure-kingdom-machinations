@@ -80,12 +80,14 @@ function advanceText(event){ //array of story
 console.log(saveFile);
 saveFile.forEach((file, index) => {
     file.addEventListener("click", () => {
+        let playerFile = pullSaveFiles();
+        playerFile[index];
         console.log(`Save file #${index} was clicked`);
     })
 
 })
 
 function pullSaveFiles(){
-    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [];
+    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
     return saveFiles;
 }
