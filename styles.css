@@ -44,7 +44,7 @@ nav {
 }
 
 #index-parchment {
-    width: 40%;
+    width: clamp(300px, 90%, 800px);
     margin-top: -20px;
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@ nav {
     width: 100%;
     height: 40vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -75,10 +75,12 @@ p {
     z-index: 2;
     text-align: center;
     list-style-type: none;
-    font-family: "Jacquard 24", cursive;
-    font-size: 70px;
+    font-family: "Kings", cursive;
+    font-size: clamp(32px, 4vw, 60px);
     color: white;
     -webkit-text-stroke: 1px black;
+    padding-left: 5%;
+
 }
 
 #options li {
@@ -123,4 +125,36 @@ p {
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
+}
+
+/*Save Files overlay*/
+#saveFiles {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.393);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#saveFiles > ul {
+    display: grid;
+    height: 80%;
+    width: clamp(300px, 90%, 800px);
+    grid-template-columns: 47.5% 47.5%;
+    column-gap: 5%;
+    grid-template-rows: max-content max-content max-content;
+    row-gap: 20px;
+}
+
+.file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file > img {
+    width: 90%;
 }
