@@ -1,66 +1,47 @@
 import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
 
-const scene = document.getElementById("scene");
+const scene = document.getElementById("scene"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
 const gameContinuation = document.getElementById("continue-game");
+
 const options = document.getElementById("options");
+const gameText = document.getElementById("gameText");
 
 let isReading = true;
 let isChoosing = false;
 let clicks = 0;
+let currentScene = ``;
+let currentPlayer; //creating spot for player
 
-newGame.addEventListener("click", ()=>{
-    console.log("clicked");
-    scenePlaythrough(story.intro);
+newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
+    currentScene = story.intro;
+    currentPlayer = new Player(1, [0,0,0,0,0,0], [], [], [], []); //new Player
+    console.log(currentPlayer);
+    advanceText(currentScene);
 })
 
+gameText.addEventListener("click", () => {
+    if (!isReading) return; //clicks will not increase when not reading
+    clicks++
 
-/*
-const newPlayer =  new Player(1, [1,2,3,4,5], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], ["intro", "intro2W"])
-console.log(newPlayer);
-newPlayer.stats.forEach(stat => {
-    console.log(stat);
-});
+    advanceText(currentScene); //onto next text
+    generateOptions(currentScene.choices); //will only run once text run out
+})
 
-tesing out layout of player class
-*/
-
-
-//advance text functions and game modifications on user input
-
-function scenePlaythrough(event){
-    const options = document.getElementById("options");
-    isReading = true;
-    clicks = 0;
-    
-
-    options.addEventListener("click", () => {
-        console.log(`${clicks}`);
-        
-        if (clicks >= event.text.length){ //if clicks exceed text pieces in array, advance text function will stop
-            isReading = false;
-        }
-        console.log(`isReading is "${isReading}"`);
-
-        generateScene(event);
-        advanceText(event);
-        generateOptions(event.choices);
-
-        clicks++;
-    })
-}
-
-function generateScene(scene){
+function generateScene(scene){ //adds background
     const background = document.getElementById("scene");
-    background.style.backgroundImage = `url(${scene.background})`;
+    background.style.backgroundImage = `url(${scene.background})`; //changing background
 }
 
 
-function generateOptions(choices){ //will take an array
+function generateOptions(choices){
     if (isReading) return;
 
-    options.innerHTML = ``; //clears textbox
+    clicks = 0; //resetting clicks
+
+    options.innerHTML = ``;
+    gameText.innerHTML = ``;
 
     choices.forEach((choice) => {
         let option = document.createElement("li"); //creating choices
@@ -68,8 +49,12 @@ function generateOptions(choices){ //will take an array
         options.appendChild(option);
 
         option.addEventListener("click", () => {
-            console.log("An option was clicked")
-            scenePlaythrough(story[choice.nextStep]);
+            isReading = true; //clicking immediately allows click to advance to happen
+
+            currentPlayer.decisions.push(`${choice.text}`); //update Player history
+
+            currentScene = story[choice.nextStep]; //update scene
+            advanceText(currentScene);
         })
 
     });
@@ -77,9 +62,13 @@ function generateOptions(choices){ //will take an array
 
 
 function advanceText(event){ //array of story
-    if (!isReading) return; //if not viewing text, function does nothing
+    if (clicks >= event.text.length) isReading = false;
+    if (!isReading) return;
 
-    options.innerHTML = `${event.text[clicks]}`; //insert into textbox
-    console.log("clicked")
+
+    options.innerHTML = ``;
+    gameText.innerHTML = `${event.text[clicks]}`; //insert into textbox
+
+    currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
 }
 
