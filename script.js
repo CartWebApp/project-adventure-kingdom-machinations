@@ -1,15 +1,16 @@
 import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
 
-const scene = document.getElementById("scene"); //background
+const background = document.getElementById("scene"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
 const gameContinuation = document.getElementById("continue-game");
 
 const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
+const saveFile = document.querySelectorAll(".file");
+
 
 let isReading = true;
-let isChoosing = false;
 let clicks = 0;
 let currentScene = ``;
 let currentPlayer; //creating spot for player
@@ -18,6 +19,8 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
     currentScene = story.intro;
     currentPlayer = new Player(1, [0,0,0,0,0,0], [], [], [], []); //new Player
     console.log(currentPlayer);
+
+    generateScene(currentScene);
     advanceText(currentScene);
 })
 
@@ -25,12 +28,12 @@ gameText.addEventListener("click", () => {
     if (!isReading) return; //clicks will not increase when not reading
     clicks++
 
+    generateScene(currentScene);
     advanceText(currentScene); //onto next text
     generateOptions(currentScene.choices); //will only run once text run out
 })
 
 function generateScene(scene){ //adds background
-    const background = document.getElementById("scene");
     background.style.backgroundImage = `url(${scene.background})`; //changing background
 }
 
@@ -72,3 +75,17 @@ function advanceText(event){ //array of story
     currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
 }
 
+
+//save functions
+console.log(saveFile);
+saveFile.forEach((file, index) => {
+    file.addEventListener("click", () => {
+        console.log(`Save file #${index} was clicked`);
+    })
+
+})
+
+function pullSaveFiles(){
+    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [];
+    return saveFiles;
+}
