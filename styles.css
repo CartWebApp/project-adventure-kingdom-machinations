@@ -134,7 +134,7 @@ p {
     position: absolute;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.393);
-    display: flex;
+    display: none;
     align-items: flex-end;
     justify-content: center;
 }
@@ -157,4 +157,8 @@ p {
 
 .file > img {
     width: 90%;
+}
+
+#whatever-the-name-says-one {
+    
 }
