@@ -134,10 +134,18 @@ p {
     position: absolute;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.393);
-    display: none;
     align-items: flex-end;
     justify-content: center;
 }
+
+.saveNotActive {
+    display: none;
+}
+
+.saveActive {
+    display:flex;
+}
+
 
 #saveFiles > ul {
     display: grid;
