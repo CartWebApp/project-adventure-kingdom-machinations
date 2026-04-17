@@ -117,8 +117,6 @@ p {
     overflow-x: hidden;
 }
 
-/*hard-coded the width so on other computers the curtain will be missaligned 
-here at [width] */
 #left-facing-curtain,
 #right-facing-curtain {
     width: 85%;
