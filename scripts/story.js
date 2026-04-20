@@ -8,9 +8,9 @@ export const story = {
         ],
 
         choices: [
-            {text: "Attack the men", scene: "", nextStep: "intro2W", impact: [0,0,0,0,0,0]},
-            {text: "Try and talk things out", scene: "", nextStep: "intro2H", impact: [0,0,0,0,0,0]},
-            {text: "Set down your weapon", scene: "", nextStep: "intro2T", impact: [0,0,0,0,0,0]}
+            {text: "Attack the men", scene: "", nextStep: "intro2W", impact: [0,0,-5,5,0,0]},
+            {text: "Try and talk things out", scene: "", nextStep: "intro2H", impact: [0,0,5,0,0,0]},
+            {text: "Set down your weapon", scene: "", nextStep: "intro2T", impact: [0,0,5,-5,0,0]}
         ]
     },
 
@@ -24,9 +24,9 @@ export const story = {
         ],
 
         choices: [
-            {text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [0,0,0,0,0,0]},
-            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
-            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
+            {text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [2,2,0,0,0,0]},
+            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,2,0,5]},
+            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2,0,0,2,0,5]}
         ]
     },
 

@@ -1,11 +1,11 @@
 export class Player {
     constructor(saveNumber, stats, weapons, armor, inventory, decisions){
-        this.saveNumber = saveNumber;
-        this.stats = stats;
-        this.weapons = weapons;
-        this.armor = armor;
-        this.inventory = inventory;
-        this.decisions = decisions;
+        this.saveNumber = saveNumber; //for save file
+        this.stats = stats; //array: [HP, STR, INT, FORT, SPD, SAN]
+        this.weapons = weapons; //user item class
+        this.armor = armor; //user item class
+        this.inventory = inventory; //user item class
+        this.decisions = decisions; //for player history
     }
 }
 
