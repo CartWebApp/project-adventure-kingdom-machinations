@@ -1,23 +1,34 @@
 import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
+import {playerImpact, attack, defend} from "./scripts/combatAndStats.js";
 
-const scene = document.getElementById("scene"); //background
+const background = document.getElementById("scene"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
 const gameContinuation = document.getElementById("continue-game");
 
 const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
+const saveFile = document.querySelectorAll(".file");
+const openSaveOverlay = document.getElementById("load-nav");
+
+const playerStats = document.querySelectorAll(".playerStat");
 
 let isReading = true;
-let isChoosing = false;
 let clicks = 0;
 let currentScene = ``;
 let currentPlayer; //creating spot for player
 
+attack([100,50,50,50,50,100],[100,50,50,50,50,100]);
+defend([100,50,50,50,50,100],[100,50,50,50,50,100]);
+
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
-    currentPlayer = new Player(1, [0,0,0,0,0,0], [], [], [], []); //new Player
-    console.log(currentPlayer);
+    currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
+
+    playerImpact(currentPlayer.stats); //update stats
+    console.log(currentPlayer.stats);
+
+    generateScene(currentScene);
     advanceText(currentScene);
 })
 
@@ -25,12 +36,12 @@ gameText.addEventListener("click", () => {
     if (!isReading) return; //clicks will not increase when not reading
     clicks++
 
+    generateScene(currentScene);
     advanceText(currentScene); //onto next text
     generateOptions(currentScene.choices); //will only run once text run out
 })
 
 function generateScene(scene){ //adds background
-    const background = document.getElementById("scene");
     background.style.backgroundImage = `url(${scene.background})`; //changing background
 }
 
@@ -44,7 +55,7 @@ function generateOptions(choices){
     gameText.innerHTML = ``;
 
     choices.forEach((choice) => {
-        let option = document.createElement("li"); //creating choices
+        let option = document.createElement("li"); //creating choice element
         option.innerHTML = `${choice.text}`;
         options.appendChild(option);
 
@@ -52,6 +63,7 @@ function generateOptions(choices){
             isReading = true; //clicking immediately allows click to advance to happen
 
             currentPlayer.decisions.push(`${choice.text}`); //update Player history
+            playerImpact(choice.impact);
 
             currentScene = story[choice.nextStep]; //update scene
             advanceText(currentScene);
@@ -61,8 +73,8 @@ function generateOptions(choices){
 }
 
 
-function advanceText(event){ //array of story
-    if (clicks >= event.text.length) isReading = false;
+function advanceText(event){ //array of story chunk
+    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run
     if (!isReading) return;
 
 
@@ -72,3 +84,25 @@ function advanceText(event){ //array of story
     currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
 }
 
+
+//save functions
+openSaveOverlay.addEventListener("click", () => {
+    document.getElementById("saveFiles").classList.remove("saveNotActive");
+})
+
+console.log(saveFile);
+saveFile.forEach((file, index) => {
+    file.addEventListener("click", () => {
+        let playerFile = pullSaveFiles();
+        playerFile[index] = currentPlayer;
+
+        localStorage.setItem("savedPlayers", JSON.stringify(playerFile))
+        console.log(`Save file #${index} was clicked`);
+    })
+
+})
+
+function pullSaveFiles(){
+    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
+    return saveFiles;
+}
