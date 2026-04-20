@@ -28,20 +28,30 @@ nav {
 }
 
 .border-container {
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
     z-index: 10;
+    position: relative; 
+    height: 500px;
+    overflow: hidden; 
 }
 
-.border-img {
-    width: clamp(300px, 90%, 800px);
-    height: auto;
-    display: block;
-    margin-bottom: 3vh;
+  .border-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%; 
+    height: 90%;
+    
     background-image: url(./backgrounds/cover.avif);
-    background-size: cover;
-}
+    background-size: cover; 
+    background-position: center;
+    z-index: -1; 
+  }
 
 #index-parchment {
     width: clamp(300px, 90%, 800px);
@@ -144,11 +154,11 @@ p {
 }
 
 .saveActive {
-    display:flex;
+    display: flex;
 }
 
 
-#saveFiles > ul {
+#saveFiles>ul {
     display: grid;
     height: 80%;
     width: clamp(300px, 90%, 800px);
@@ -164,7 +174,7 @@ p {
     align-items: center;
 }
 
-.file > img {
+.file>img {
     width: 90%;
 }
 
@@ -176,17 +186,46 @@ p {
     display: flex;
 }
 
-#save-nav, 
+#save-nav,
 #load-nav,
 #inventory-nav,
 #history-nav,
 #exit-nav {
-list-style-type: none;
-font-size: clamp(20px, 4vw, 30px);
-margin-top: 1vh;
-margin-bottom: 1vh;
-font-family: "Kings", cursive;
-font-weight: 700;
-font-style: normal;
-padding: 1vh;
+    list-style-type: none;
+    font-size: clamp(20px, 4vw, 30px);
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-family: "Kings", cursive;
+    font-weight: 700;
+    font-style: normal;
+    padding: 1vh;
+}
+
+#stats {
+    text-align: center;
+    position: absolute;
+    z-index: 15;
+}
+
+#enemyStats,
+#playerStats {
+    display: flex;
+    list-style-type: none;
+    font-size: 18px;
+    font-family: "Kings", cursive;
+    font-weight: 700;
+    font-style: normal;
+    padding: 1vh;
+    background: black;
+    color: white;
+    gap: 5px;
+    position: relative;
+}
+
+#enemyStats {
+    border-bottom: 5px solid red;
+}
+
+#playerStats {
+    border-top: 5px solid red;
 }
