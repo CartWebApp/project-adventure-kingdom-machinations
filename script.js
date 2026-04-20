@@ -1,5 +1,6 @@
 import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
+import { playerImpact } from "./scripts/combatAndStats.js";
 
 const background = document.getElementById("scene"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
@@ -10,11 +11,14 @@ const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
 const openSaveOverlay = document.getElementById("load-nav");
 
+const playerStats = document.querySelectorAll(".playerStat");
 
 let isReading = true;
 let clicks = 0;
 let currentScene = ``;
 let currentPlayer; //creating spot for player
+
+playerImpact([10,11,12,13,14,15]);
 
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
