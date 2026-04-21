@@ -55,8 +55,24 @@ export const story = {
         ],
 
         choices: [
-            { text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0] },
-            { text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5] },
-            { text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5] }]
+            {text: "Go back to sleep", scene: "", nextStep: "dailyT", impact: [0,0,0,0,0,0]},
+            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
+            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
+        ]
+    },
+
+    deathRIP: {
+        background: "/backgrounds/death.jpg",
+        text: [
+            `Oh...`,
+            `Seems like you ran out of health...`,
+            `RIP`
+        ],
+
+        choices: [
+            {text: `Restart your attempt`, nextStep: `intro`},
+            {text: `Load a save file`},
+            {text: `Go to home`}
+        ]
     }
 }
