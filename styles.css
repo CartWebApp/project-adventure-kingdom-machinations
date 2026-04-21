@@ -42,7 +42,6 @@ nav {
     overflow: hidden;
 }
 
-
 .border-img {
     width: 100%;
     height: auto;
@@ -220,11 +219,12 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     padding: 5px 0;
     color: white;
-    font-family: "Kings", cursive;
+    font-family: "Jacquard 24", cursive;
     list-style-type: none;
+    font-size: 25px;
 }
 
 #enemyStats {
@@ -233,4 +233,8 @@ p {
 
 #playerStats {
     border-top: 4px solid red;
+}
+
+#inventory img{
+    display: hidden;   
 }

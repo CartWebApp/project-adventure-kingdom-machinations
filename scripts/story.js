@@ -41,7 +41,7 @@ export const story = {
 
         choices: [
             {text: "Read a book to calm down", scene: "", nextStep: "dailyH", impact: [0,0,0,0,0,0]},
-            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
+            {text: "Take a walk outside", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
             {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
         ]
     },
