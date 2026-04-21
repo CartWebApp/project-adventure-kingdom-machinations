@@ -81,7 +81,7 @@ function generateOptions(choices){
 
 
 function advanceText(event){ //array of story chunk
-    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run
+    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     if (!isReading) return;
 
 
