@@ -2,7 +2,7 @@ import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
 import {playerImpact, attack, defend} from "./scripts/combatAndStats.js";
 
-const background = document.getElementById("scene"); //background
+const background = document.querySelector(".border-container"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
 const gameContinuation = document.getElementById("continue-game");
 
@@ -41,8 +41,8 @@ gameText.addEventListener("click", () => {
     generateOptions(currentScene.choices); //will only run once text run out
 })
 
-function generateScene(scene){ //adds background
-    background.style.backgroundImage = `url(${scene.background})`; //changing background
+function generateScene(scene) { // adds background
+    background.style.setProperty('--scene-bg', `url(${scene.background})`); //changes background
 }
 
 
