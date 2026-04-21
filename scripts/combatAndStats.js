@@ -1,5 +1,8 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
 const playerStats = document.querySelectorAll(".playerStat");
+let currentScene = ``;
+let clicks = 0;
+let isReading = false;
 
 
 export function playerImpact(array){
@@ -65,4 +68,14 @@ let playerAtk = Math.ceil(.5 * playerStats[1] - .3 * enemyStats[3]); //subtract 
     playerStats[5] -= 1; //sanity drops after any attack
     console.log(playerStats, enemyStats);
     return playerStats, enemyStats;
+}
+
+export function checkHealth(){
+    if (playerStats[0] <= 0){
+        clicks = 0;
+        isReading = true;
+        currentScene = `deathRIP`;
+    } else {
+        return;
+    }
 }
