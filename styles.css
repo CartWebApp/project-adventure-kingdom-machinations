@@ -4,10 +4,11 @@
 }
 
 /* You cannot scroll b/c of this*/
-html, body {
+html,
+body {
     overflow-y: hidden;
     height: 100%;
-  }  
+}
 
 h1 {
     font-family: "Kings", cursive;
@@ -34,41 +35,37 @@ nav {
 }
 
 .border-container {
-    width: auto;
+    width: clamp(300px, 100%, 900px);
+    position: relative;
     display: flex;
     justify-content: center;
-    z-index: 10;
-    position: relative; 
-    height: 500px;
-    overflow: hidden; 
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 
 .border-img {
+    width: 100%;
+    height: auto;
+    display: block;
     position: relative;
-    z-index: 11;
-    height: 100%;
-    pointer-events: none; 
+    z-index: 10;
+    pointer-events: none;
 }
 
-  .border-container::before {
-    content: "";
+.inner-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    width: 90%; 
-    height: 90%;
-    
-    background-image: url(./backgrounds/cover.avif);
-    background-size: cover; 
+    top: 7.5%;
+    bottom: 7.5%;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: var(--scene-bg, url(./backgrounds/cover.avif));
+    background-size: cover;
     background-position: center;
-    z-index: -1; 
-  }
+    z-index: 5;
+}
 
 #index-parchment {
     width: clamp(300px, 90%, 800px);
@@ -217,30 +214,23 @@ p {
     padding: 1vh;
 }
 
-#stats {
-    text-align: center;
-    position: relative;
-    z-index: 15;
-}
-
 #enemyStats,
 #playerStats {
-    display: flex;
-    list-style-type: none;
-    font-size: 18px;
-    font-family: "Kings", cursive;
-    font-weight: 700;
-    font-style: normal;
-    padding: 1vh;
     background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 0;
     color: white;
-    gap: 5px;
+    font-family: "Kings", cursive;
+    list-style-type: none;
 }
 
 #enemyStats {
-    border-bottom: 5px solid red;
+    border-bottom: 4px solid red;
 }
 
 #playerStats {
-    border-top: 5px solid red;
+    border-top: 4px solid red;
 }
