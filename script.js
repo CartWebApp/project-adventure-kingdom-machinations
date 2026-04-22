@@ -54,6 +54,7 @@ function generateScene(scene) { // adds background
 function generateOptions(choices){
     if (isReading) return;
 
+    gameText.style.display = `none`
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 

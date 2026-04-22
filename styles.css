@@ -92,34 +92,51 @@ nav {
     pointer-events: none;
 }
 
-#options,
-p {
-    position: relative;
-    z-index: 2;
-    list-style-type: none;
-    font-family: "Kings", cursive;
+
+/*buttons*/
+#gameText {
+    display: none;
+}
+
+#gameText,
+#options{
     width: clamp(100px, 80%, 800px);
+    position: relative;  
+}
+
+#options button,
+#gameText {
+    z-index: 2;
+    font-family: "Kings", cursive;
     height: 85%;
     font-size: clamp(20px, 4vw, 50px);
     color: white;
     -webkit-text-stroke: 1px black;
     padding-left: 5%;
-
 }
 
-#options li {
-    cursor: pointer;
+#options button,
+#gameText {
+    list-style-type: none;
+    background: none;
+    border: none;
+}
+
+#options button {
     transition: 0.3s;
     position: relative;
 }
 
-#options li:hover {
+#options button:hover,
+#options button:focus {
     color: #F9D357;
     transform: scale(1.1);
     padding-left: 30px;
+    outline: none;
 }
 
-#options li:hover::before {
+#options button:hover::before,
+#options button:focus::before {
     content: "";
     position: absolute;
     left: 0;
@@ -130,8 +147,11 @@ p {
     background-image: url('images/quilt.png');
     background-size: contain;
     background-repeat: no-repeat;
+    outline: none;
 }
 
+
+/*curtains*/
 .curtains {
     display: flex;
     position: absolute;
@@ -198,27 +218,52 @@ p {
 #menuNavigation {
     z-index: 12;
     display: none;
+    width: 80%;
 }
 
 #nav-list {
     display: flex;
+    width: 90%;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
-#save-nav,
-#load-nav,
-#inventory-nav,
-#history-nav,
-#exit-nav {
-    list-style-type: none;
-    font-size: clamp(20px, 4vw, 30px);
+#nav-list button{
+    font-size: clamp(20px, 4vw, 28px);
     margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-bottom: 4vh;
     font-family: "Kings", cursive;
     font-weight: 700;
     font-style: normal;
     padding: 1vh;
+    border: none;
+    background: none;
 }
 
+#nav-list button:hover,
+#nav-list button:focus {
+    color: #F9D357;
+    transform: scale(1.1);
+    padding-left: 30px;
+    -webkit-text-stroke: 0.2px black;
+    outline: none;
+}
+
+#nav-list button:hover::before,
+#nav-list button:focus::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-image: url('images/quilt.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*Stat Bars*/
 #enemyStats,
 #playerStats {
     background: black;
