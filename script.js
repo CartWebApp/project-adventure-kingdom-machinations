@@ -54,6 +54,7 @@ function generateScene(scene) { // adds background
 function generateOptions(choices){
     if (isReading) return;
 
+    gameText.style.display = `none`
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 
@@ -94,7 +95,7 @@ function advanceText(event){ //array of story chunk
 
 //save functions
 openSaveOverlay.addEventListener("click", () => {
-    document.getElementById("saveFiles").classList.remove("saveNotActive");
+    document.getElementById("saveFiles").classList.remove("notActive");
 })
 
 console.log(saveFile);
@@ -109,7 +110,7 @@ saveFile.forEach((file, index) => {
         localStorage.setItem("savedPlayers", JSON.stringify(playerFile))
         console.log(`Save file #${index} was clicked`);
 
-        document.getElementById("saveFiles").classList.add("saveNotActive");
+        document.getElementById("saveFiles").classList.add("notActive");
     })
 
 })

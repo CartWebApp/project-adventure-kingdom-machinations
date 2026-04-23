@@ -38,7 +38,6 @@
                 <li>Intelligence: <span class="enemyStat">0</span></li>
                 <li>Fortitude: <span class="enemyStat">0</span></li>
                 <li>Speed: <span class="enemyStat">0</span></li>
-                <li>Sanity: <span class="enemyStat">0</span></li>
             </ul>
 
             <ul id="playerStats">
@@ -55,28 +54,28 @@
     <div id="index-parchment">
         <section id="textBox">
             <img src="images/parchment.png" alt="Parchment Background">
-            <p id="gameText"></p>
+            <button id="gameText"></button> <!--Figure out how to make appear and disappear in JS-->
 
             <ul id="options">
-                <li id="continue-game">New Game</li>
-                <li>Load Game</li>
-                <li>Import Game</li>
-                <li>Export Game</li>
+                <li id="continue-game"><button>New Game</button></li>
+                <li><button>Load Game</button></li>
+                <li><button>Import Game</button></li>
+                <li><button>Export Game</button></li>
             </ul>
             <nav id="menuNavigation">
                 <ul id="nav-list">
-                    <li id="save-nav">Save</li>
-                    <li id="load-nav">Load</li>
-                    <li id="inventory-nav">Inventory</li>
-                    <li id="history-nav">History</li>
-                    <li id="exit-nav">Exit</li>
+                    <li id="save-nav"><button>Save</button></li>
+                    <li id="load-nav"><button>Load</button></li>
+                    <li id="inventory-nav"><button>Inventory</button></li>
+                    <li id="history-nav"><button>History</button></li>
+                    <li id="exit-nav"><button>Exit</button></li>
                 </ul>
             </nav>
 
         </section>
     </div>
 
-    <section id="saveFiles" class="saveNotActive">
+    <section id="saveFiles" class="notActive">
         <ul>
             <li class="file" id="save0">
                 <img src="./images/border.png" alt="save file scene">
