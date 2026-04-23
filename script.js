@@ -1,15 +1,15 @@
 import {Player, Item} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
-import {playerImpact, attack, defend} from "./scripts/combatAndStats.js";
+import {playerImpact, attack, defend, checkHealth} from "./scripts/combatAndStats.js";
 
-const background = document.getElementById("scene"); //background
+const background = document.querySelector(".border-container"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
 const gameContinuation = document.getElementById("continue-game");
 
 const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
-const openSaveOverlay = document.getElementById("load-nav");
+const openSaveOverlay = document.getElementById("save-nav");
 
 const playerStats = document.querySelectorAll(".playerStat");
 
@@ -25,6 +25,8 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
     currentScene = story.intro;
     currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
 
+    document.getElementById("menuNavigation").style.display = `flex`;
+
     playerImpact(currentPlayer.stats); //update stats
     console.log(currentPlayer.stats);
 
@@ -36,20 +38,25 @@ gameText.addEventListener("click", () => {
     if (!isReading) return; //clicks will not increase when not reading
     clicks++
 
+    currentPlayer.clicks = clicks;
+
+    checkHealth();
     generateScene(currentScene);
     advanceText(currentScene); //onto next text
     generateOptions(currentScene.choices); //will only run once text run out
 })
 
-function generateScene(scene){ //adds background
-    background.style.backgroundImage = `url(${scene.background})`; //changing background
+function generateScene(scene) { // adds background
+    background.style.setProperty('--scene-bg', `url(${scene.background})`); //changes background
 }
 
 
 function generateOptions(choices){
     if (isReading) return;
 
+    gameText.style.display = `none`
     clicks = 0; //resetting clicks
+    currentPlayer.clicks = clicks;
 
     options.innerHTML = ``;
     gameText.innerHTML = ``;
@@ -66,6 +73,7 @@ function generateOptions(choices){
             playerImpact(choice.impact);
 
             currentScene = story[choice.nextStep]; //update scene
+            checkHealth();
             advanceText(currentScene);
         })
 
@@ -74,7 +82,7 @@ function generateOptions(choices){
 
 
 function advanceText(event){ //array of story chunk
-    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run
+    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     if (!isReading) return;
 
 
@@ -87,7 +95,7 @@ function advanceText(event){ //array of story chunk
 
 //save functions
 openSaveOverlay.addEventListener("click", () => {
-    document.getElementById("saveFiles").classList.remove("saveNotActive");
+    document.getElementById("saveFiles").classList.remove("notActive");
 })
 
 console.log(saveFile);
@@ -96,8 +104,13 @@ saveFile.forEach((file, index) => {
         let playerFile = pullSaveFiles();
         playerFile[index] = currentPlayer;
 
+        let filebackground = document.querySelector(`#save${index} > img`);
+        filebackground.style.background = `url(.${currentScene.background})`;
+
         localStorage.setItem("savedPlayers", JSON.stringify(playerFile))
         console.log(`Save file #${index} was clicked`);
+
+        document.getElementById("saveFiles").classList.add("notActive");
     })
 
 })
