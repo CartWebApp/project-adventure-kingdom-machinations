@@ -25,6 +25,10 @@ nav {
     justify-content: center;
 }
 
+ul{
+    list-style-type: none;
+}
+
 #index-body {
     display: flex;
     flex-direction: column;
@@ -94,30 +98,26 @@ nav {
 
 
 /*buttons*/
-#gameText {
-    display: none;
-}
-
 #gameText,
 #options{
     width: clamp(100px, 80%, 800px);
     position: relative;  
+    z-index: 24;
+    padding-top: 4vh;
 }
 
 #options button,
 #gameText {
     z-index: 2;
     font-family: "Kings", cursive;
-    height: 85%;
-    font-size: clamp(20px, 4vw, 50px);
+    font-size: clamp(32px, 3vw, 45px);
     color: white;
     -webkit-text-stroke: 1px black;
-    padding-left: 5%;
+    text-align:start;
 }
 
 #options button,
 #gameText {
-    list-style-type: none;
     background: none;
     border: none;
 }
@@ -176,24 +176,23 @@ nav {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 20;
+    z-index: 28;
     background-color: rgba(0, 0, 0, 0.393);
     align-items: flex-end;
     justify-content: center;
+}
+.saveFile{
+    display: flex;
 }
 
 .notActive {
     display: none;
 }
 
-.saveActive {
-    display: flex;
-}
-
-
 #saveFiles>ul {
     display: grid;
-    height: 80%;
+    height: max-content;
+    margin-bottom: 10vh;
     width: clamp(300px, 90%, 800px);
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
@@ -217,15 +216,17 @@ nav {
 /*Game menus and stat bars*/
 #menuNavigation {
     z-index: 12;
-    display: none;
     width: 80%;
+}
+
+.gameNavActive{
+    display: flex;
 }
 
 #nav-list {
     display: flex;
     width: 90%;
     justify-content: space-between;
-    list-style-type: none;
 }
 
 #nav-list button{
@@ -274,7 +275,6 @@ nav {
     padding: 5px 0;
     color: white;
     font-family: "Jacquard 24", cursive;
-    list-style-type: none;
     font-size: 25px;
 }
 

@@ -1,0 +1,79 @@
+body{
+    background-color: #5D685C;
+    background-image: url(./images/rock-wall.png);
+    background-size: cover;
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*Background Curtains*/
+#backgroundCurtains{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#curtain-left{
+    background-image: url(images/left-curtain.png);
+    height: 100%;
+    width: 270px;
+    background-size:cover;
+}
+
+#curtain-right{
+    background-image: url(images/right-curtain.png);
+    height: 100%;
+    width: 263px;
+    background-size:cover;
+}
+
+h1 {
+    position: relative;
+    font-family: "Kings", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(40px, 7vw, 120px);
+    color: white;
+    -webkit-text-stroke: 2px black;
+    z-index: 2;
+}
+
+/*Stat Bars*/
+#enemyStats,
+#playerStats {
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px 0;
+    color: white;
+    font-family: "Jacquard 24", cursive;
+    font-size: 25px;
+}
+
+#enemyStats {
+    border-bottom: 4px solid red;
+}
+
+#playerStats {
+    border-top: 4px solid red;
+}
+
+@media screen and (max-width: 600px) {
+    #curtain-left{
+        background-image: url(./images/mini-left-curtain.png);
+    }
+    
+    #curtain-right{
+        background-image: url(./images/mini-right-curtain.png);
+    }
+}

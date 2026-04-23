@@ -10,6 +10,7 @@ const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
 const openSaveOverlay = document.getElementById("save-nav");
+const gameNav = document.getElementById(`menuNavigation`);
 
 const playerStats = document.querySelectorAll(".playerStat");
 
@@ -25,7 +26,8 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
     currentScene = story.intro;
     currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
 
-    document.getElementById("menuNavigation").style.display = `flex`;
+    gameNav.classList.remove(`notActive`);
+    gameNav.classList.add(`gameNavActive`);
 
     playerImpact(currentPlayer.stats); //update stats
     console.log(currentPlayer.stats);
@@ -37,7 +39,7 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
 gameText.addEventListener("click", () => {
     if (!isReading) return; //clicks will not increase when not reading
     clicks++
-
+    gameText.classList.remove("notActive");
     currentPlayer.clicks = clicks;
 
     checkHealth();
@@ -54,7 +56,7 @@ function generateScene(scene) { // adds background
 function generateOptions(choices){
     if (isReading) return;
 
-    gameText.style.display = `none`
+    gameText.classList.add("notActive");
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 
@@ -63,7 +65,7 @@ function generateOptions(choices){
 
     choices.forEach((choice) => {
         let option = document.createElement("li"); //creating choice element
-        option.innerHTML = `${choice.text}`;
+        option.innerHTML = `<button>${choice.text}<button>`;
         options.appendChild(option);
 
         option.addEventListener("click", () => {
@@ -85,7 +87,7 @@ function advanceText(event){ //array of story chunk
     if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     if (!isReading) return;
 
-
+    gameText.classList.remove("notActive");
     options.innerHTML = ``;
     gameText.innerHTML = `${event.text[clicks]}`; //insert into textbox
 
@@ -99,18 +101,17 @@ openSaveOverlay.addEventListener("click", () => {
 })
 
 console.log(saveFile);
+
 saveFile.forEach((file, index) => {
     file.addEventListener("click", () => {
-        let playerFile = pullSaveFiles();
-        playerFile[index] = currentPlayer;
+        let playerFile = pullSaveFiles(); //pulling save files or empty array of files
+        playerFile[index] = currentPlayer; //on click, assign current player to nth file
 
-        let filebackground = document.querySelector(`#save${index} > img`);
+        let filebackground = document.querySelector(`#save${index} > img`); //changing background
         filebackground.style.background = `url(.${currentScene.background})`;
 
-        localStorage.setItem("savedPlayers", JSON.stringify(playerFile))
+        localStorage.setItem("savedPlayers", JSON.stringify(playerFile)); //update storage
         console.log(`Save file #${index} was clicked`);
-
-        document.getElementById("saveFiles").classList.add("notActive");
     })
 
 })
@@ -119,3 +120,4 @@ function pullSaveFiles(){
     let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
     return saveFiles;
 }
+

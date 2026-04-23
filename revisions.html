@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdom Machinations</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="revised.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Kings-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
@@ -13,24 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Kings&display=swap" rel="stylesheet">
 </head>
-
-<body id="index-body">
-    <div class="curtains">
-        <div id="right-facing-curtain">
-            <img src="images/right-facing-curtain.png">
-        </div>
-        <div id="left-facing-curtain">
-            <img src="images/left-facing-curtain.png">
-        </div>
+<body>
+    <div id="backgroundCurtains">
+        <div id="curtain-left"></div>
+        <div id="curtain-right"></div>
     </div>
-    <nav>
+    <main>
         <h1>Kingdom Machinations</h1>
-    </nav>
-
-    <header class="border-container">
-        <img src="images/border.png" alt="Decorative Border" class="border-img" id="scene">
-
-        <div class="inner-content">
+        <!--Game Screen with stat bars-->
+        <div id="gameScreen">
             <ul id="enemyStats">
                 <li>Name: <span class="enemyName">--</span></li>
                 <li>Health: <span class="enemyStat">0</span></li>
@@ -49,12 +39,9 @@
                 <li>Sanity: <span class="playerStat">0</span></li>
             </ul>
         </div>
-    </header>
-
-    <div id="index-parchment">
-        <section id="textBox">
-            <img src="images/parchment.png" alt="Parchment Background">
-            <button id="gameText" class="notActive"></button> <!--Figure out how to make appear and disappear in JS-->
+        <!--Text Box and navigation for game-->
+        <div id="textBox">
+            <button id="gameText" class="notActive"></button>
 
             <ul id="options">
                 <li id="continue-game"><button>New Game</button></li>
@@ -62,6 +49,7 @@
                 <li><button>Import Game</button></li>
                 <li><button>Export Game</button></li>
             </ul>
+
             <nav id="menuNavigation" class="notActive">
                 <ul id="nav-list">
                     <li id="save-nav"><button>Save</button></li>
@@ -71,45 +59,15 @@
                     <li id="exit-nav"><button>Exit</button></li>
                 </ul>
             </nav>
+        </div>
 
+        <section>
+            <h2>Save Files</h2>
+            <ul>
+                <li><button></button></li>
+            </ul>
         </section>
-    </div>
-
-    <section id="saveFiles" class="saveFile notActive">
-        <ul>
-            <li class="file" id="save0">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-            <li class="file" id="save1">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-            <li class="file" id="save2">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-            <li class="file" id="save3">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-            <li class="file" id="save4">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-            <li class="file" id="save5">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
-            </li>
-        </ul>
-    </section>
-<!--
-    <section id="inventory">
-        <img src="UI and enemies/history.png" alt="inventory scroll">
-    </section>
--->
-
-    <script src="script.js" type="module"></script>
+    </main>
+    
 </body>
-
 </html>
