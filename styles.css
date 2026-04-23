@@ -182,7 +182,7 @@ nav {
     justify-content: center;
 }
 
-.saveNotActive {
+.notActive {
     display: none;
 }
 
