@@ -15,13 +15,9 @@
 </head>
 
 <body id="index-body">
-    <div class="curtains">
-        <div id="right-facing-curtain">
-            <img src="images/right-facing-curtain.png">
-        </div>
-        <div id="left-facing-curtain">
-            <img src="images/left-facing-curtain.png">
-        </div>
+    <div id="backgroundCurtains">
+        <div id="curtain-left"></div>
+        <div id="curtain-right"></div>
     </div>
     <nav>
         <h1>Kingdom Machinations</h1>
@@ -54,7 +50,7 @@
     <div id="index-parchment">
         <section id="textBox">
             <img src="images/parchment.png" alt="Parchment Background">
-            <button id="gameText"></button> <!--Figure out how to make appear and disappear in JS-->
+            <button id="gameText" class="notActive"></button> <!--Figure out how to make appear and disappear in JS-->
 
             <ul id="options">
                 <li id="continue-game"><button>New Game</button></li>

@@ -14,12 +14,15 @@ h1 {
     font-family: "Kings", cursive;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(40px, 7vw, 120px);
+    font-size: clamp(40px, 7vw, 70px);
     color: white;
     -webkit-text-stroke: 2px black;
     z-index: 11;
 }
 
+ul{
+    list-style-type: none;
+}
 nav {
     display: flex;
     justify-content: center;
@@ -32,6 +35,7 @@ nav {
     background-image: url(images/rock-wall.png);
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: #5D685C;
 }
 
 .border-container {
@@ -94,14 +98,11 @@ nav {
 
 
 /*buttons*/
-#gameText {
-    display: none;
-}
-
 #gameText,
 #options{
     width: clamp(100px, 80%, 800px);
-    position: relative;  
+    position: relative;
+    z-index: 2;
 }
 
 #options button,
@@ -152,22 +153,28 @@ nav {
 
 
 /*curtains*/
-.curtains {
+#backgroundCurtains{
     display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
 }
 
-#left-facing-curtain,
-#right-facing-curtain {
-    width: 85%;
+#curtain-left{
+    background-image: url(images/left-curtain.png);
     height: 100%;
-    object-fit: cover;
-    flex-shrink: 0;
+    width: 270px;
+    background-size:cover;
+}
+
+#curtain-right{
+    background-image: url(images/right-curtain.png);
+    height: 100%;
+    width: 263px;
+    background-size:cover;
 }
 
 
@@ -284,4 +291,14 @@ nav {
 
 #playerStats {
     border-top: 4px solid red;
+}
+
+@media screen and (max-width: 600px) {
+    #curtain-left{
+        background-image: url(./images/mini-left-curtain.png);
+    }
+    
+    #curtain-right{
+        background-image: url(./images/mini-right-curtain.png);
+    }
 }
