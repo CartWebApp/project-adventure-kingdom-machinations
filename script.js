@@ -10,6 +10,7 @@ const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
 const openSaveOverlay = document.getElementById("save-nav");
+const closeSaveOverlau = document.getElementById(`closeSave`);
 
 const playerStats = document.querySelectorAll(".playerStat");
 
@@ -25,6 +26,7 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
 
     document.getElementById("menuNavigation").style.display = `flex`;
     gameText.classList.remove(`notActive`);
+    options.classList.add(`notActive`);
 
     playerImpact(currentPlayer.stats); //update stats
     console.log(currentPlayer.stats);
@@ -38,6 +40,7 @@ gameText.addEventListener("click", () => {
     clicks++
 
     gameText.classList.remove(`notActive`);
+    options.classList.add(`notActive`);
     currentPlayer.clicks = clicks;
 
     checkHealth();
@@ -55,6 +58,8 @@ function generateOptions(choices){
     if (isReading) return;
 
     gameText.classList.add(`notActive`);
+    options.classList.remove(`notActive`);
+
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 
@@ -63,7 +68,7 @@ function generateOptions(choices){
 
     choices.forEach((choice) => {
         let option = document.createElement("li"); //creating choice element
-        option.innerHTML = `<button>${choice.text}<button>`;
+        option.innerHTML = `<button>${choice.text}</button>`;
         options.appendChild(option);
 
         option.addEventListener("click", () => {
@@ -85,6 +90,8 @@ function advanceText(event){ //array of story chunk
     if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     if (!isReading) return;
 
+    gameText.classList.remove(`notActive`);
+    options.classList.add(`notActive`);
 
     options.innerHTML = ``;
     gameText.innerHTML = `${event.text[clicks]}`; //insert into textbox
@@ -96,6 +103,12 @@ function advanceText(event){ //array of story chunk
 //save functions
 openSaveOverlay.addEventListener("click", () => {
     document.getElementById("saveFiles").classList.remove("notActive");
+    document.getElementById("saveFiles").classList.add("saveActive");
+})
+
+closeSaveOverlau.addEventListener("click", ()=>{
+    document.getElementById("saveFiles").classList.add("notActive");
+    document.getElementById("saveFiles").classList.remove("saveActive");
 })
 
 console.log(saveFile);
