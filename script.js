@@ -18,14 +18,13 @@ let clicks = 0;
 let currentScene = ``;
 let currentPlayer; //creating spot for player
 
-attack([100,50,50,50,50,100],[100,50,50,50,50,100]);
-defend([100,50,50,50,50,100],[100,50,50,50,50,100]);
 
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
     currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
 
     document.getElementById("menuNavigation").style.display = `flex`;
+    gameText.classList.remove(`notActive`);
 
     playerImpact(currentPlayer.stats); //update stats
     console.log(currentPlayer.stats);
@@ -38,6 +37,7 @@ gameText.addEventListener("click", () => {
     if (!isReading) return; //clicks will not increase when not reading
     clicks++
 
+    gameText.classList.remove(`notActive`);
     currentPlayer.clicks = clicks;
 
     checkHealth();
@@ -54,7 +54,7 @@ function generateScene(scene) { // adds background
 function generateOptions(choices){
     if (isReading) return;
 
-    gameText.style.display = `none`
+    gameText.classList.add(`notActive`);
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 
@@ -63,7 +63,7 @@ function generateOptions(choices){
 
     choices.forEach((choice) => {
         let option = document.createElement("li"); //creating choice element
-        option.innerHTML = `${choice.text}`;
+        option.innerHTML = `<button>${choice.text}<button>`;
         options.appendChild(option);
 
         option.addEventListener("click", () => {
