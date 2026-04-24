@@ -33,7 +33,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(images/rock-wall.png);
+    background-image: url(design/rock-wall.png);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -144,7 +144,7 @@ ul{
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    background-image: url('images/quilt.png');
+    background-image: url('design/quilt.png');
     background-size: contain;
     background-repeat: no-repeat;
     outline: none;
@@ -259,7 +259,7 @@ ul{
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    background-image: url('images/quilt.png');
+    background-image: url('design/quilt.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
