@@ -8,9 +8,9 @@ export const story = {
         ],
 
         choices: [
-            { text: "Attack the men", scene: "", nextStep: "intro2W", impact: [0, 0, -5, 5, 0, 0] },
-            { text: "Try and talk things out", scene: "", nextStep: "intro2H", impact: [0, 0, 5, 0, 0, 0] },
-            { text: "Set down your weapon", scene: "", nextStep: "intro2T", impact: [0, 0, 5, -5, 0, 0] }
+            { text: "Attack the men", nextStep: "intro2W", impact: [0, 0, -5, 5, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Try and talk things out", nextStep: "intro2H", impact: [0, 0, 5, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Set down your weapon", nextStep: "intro2T", impact: [0, 0, 5, -5, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
@@ -24,9 +24,9 @@ export const story = {
         ],
 
         choices: [
-            { text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0] },
-            { text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5] },
-            { text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5] }
+            { text: "Begin your morning training", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
@@ -40,10 +40,9 @@ export const story = {
         ],
 
         choices: [
-            { text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0] },
-            { text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5] },
-            { text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5] }
-        ]
+            { text: "Begin your morning training", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}]
     },
 
     intro2T: {
@@ -56,9 +55,30 @@ export const story = {
         ],
 
         choices: [
-            {text: "Go back to sleep", scene: "", nextStep: "dailyT", impact: [0,0,0,0,0,0]},
-            {text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0,0,0,0,0,0]},
-            {text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [0,0,0,0,0,0]}
+            {text: "Go back to sleep", nextStep: "dailyT", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Make some breakfast", nextStep: "dailyGB", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    mockLeadUp:{
+        background: ``,
+        text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
+        choices: [
+            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: false, enemy: [100, 50, 50, 50, 50], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+        ]
+    },
+
+    mockBattle:{
+        background: ``,
+        text: [],
+        choices: [
+            {text: `Attack`},
+            {text: `Defend`},
+            {text: `Inventory`},
+            {text: `Run Away`}
         ]
     },
 

@@ -1,9 +1,24 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
-const playerStats = document.querySelectorAll(".playerStat");
+import {Player, Enemy, Item, Armor, Weapon} from "./classes.js";
+import {story} from "./story.js";
+
 let currentScene = ``;
 let clicks = 0;
 let isReading = false;
 
+const background = document.querySelector(".border-container"); //background
+const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
+const gameContinuation = document.getElementById("continue-game");
+
+const options = document.getElementById("options");
+const gameText = document.getElementById("gameText");
+const saveFile = document.querySelectorAll(".file");
+const openSaveOverlay = document.getElementById("save-nav");
+const closeSaveOverlau = document.getElementById(`closeSave`);
+const playerStats = document.querySelectorAll(".playerStat");
+
+let isCombat = false;
+let isAlive = true;
 
 export function playerImpact(array){
     playerStats.forEach((stat, index) => {
@@ -20,7 +35,7 @@ let playerAtk = Math.ceil(.85 * playerStats[1] - .25 * enemyStats[3]); //subtrac
         playerStats[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
 
         if (playerStats[0] <= 0){
-            //death screen
+            isAlive = false; //death
             return;
         } else {
             enemyStats[0] -= playerAtk > 0 ? playerAtk : 0;
@@ -29,7 +44,7 @@ let playerAtk = Math.ceil(.85 * playerStats[1] - .25 * enemyStats[3]); //subtrac
         enemyStats[0] -= playerAtk > 0 ? playerAtk : 0;
 
         if (enemyStats <= 0){
-            //victory screen
+            isCombat = false; //victory!
             return;
         } else {
             playerStats[0] -= enemyAtk > 0 ? enemyAtk : 0;
@@ -49,7 +64,7 @@ let playerAtk = Math.ceil(.5 * playerStats[1] - .3 * enemyStats[3]); //subtract 
         playerStats[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
 
         if (playerStats[0] <= 0){
-            //death screen
+            isAlive = false; //death
             return;
         } else {
             enemyStats[0] -= playerAtk > 0 ? playerAtk : 0;
@@ -58,7 +73,7 @@ let playerAtk = Math.ceil(.5 * playerStats[1] - .3 * enemyStats[3]); //subtract 
         enemyStats[0] -= playerAtk > 0 ? playerAtk : 0;
 
         if (enemyStats <= 0){
-            //victory screen
+            isCombat = false; //victory!
             return;
         } else {
             playerStats[0] -= enemyAtk > 0 ? enemyAtk : 0;
@@ -71,11 +86,17 @@ let playerAtk = Math.ceil(.5 * playerStats[1] - .3 * enemyStats[3]); //subtract 
 }
 
 export function checkHealth(){
-    if (playerStats[0] <= 0){
-        clicks = 0;
-        isReading = true;
-        currentScene = `deathRIP`;
-    } else {
-        return;
-    }
+    if(!isAlive) return;
+    clicks = 0; //reset and move to death screen
+    isAlive = false;
+    isReading = true;
+    currentScene = `deathRIP`;
+}
+
+export function combatExists(choice){
+    isCombat = choice.combat;
+    if (!choice.combat) return;
+
+    let enemy = new Enemy(choice.enemy);
+
 }

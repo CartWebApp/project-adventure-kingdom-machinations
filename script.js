@@ -1,4 +1,4 @@
-import {Player, Item} from "./scripts/classes.js";
+import {Player, Enemy, Item, Armor, Weapon} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
 import {playerImpact, attack, defend, checkHealth} from "./scripts/combatAndStats.js";
 
@@ -15,14 +15,20 @@ const closeSaveOverlau = document.getElementById(`closeSave`);
 const playerStats = document.querySelectorAll(".playerStat");
 
 let isReading = true;
+let isCombat = false;
+let isAlive = true;
+let isPlaying  = false;
+
 let clicks = 0;
 let currentScene = ``;
 let currentPlayer; //creating spot for player
 
 
+
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
     currentPlayer = new Player(1, [100,10,10,10,10,100], [], [], [], []); //new Player
+    isPlaying = true;
 
     document.getElementById("menuNavigation").style.display = `flex`;
     gameText.classList.remove(`notActive`);
@@ -36,7 +42,10 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
 })
 
 gameText.addEventListener("click", () => {
+    if(!isPlaying) return; //not advance if not playing
     if (!isReading) return; //clicks will not increase when not reading
+    if (isCombat) return; //will not advance during combat
+
     clicks++
 
     gameText.classList.remove(`notActive`);
@@ -55,7 +64,9 @@ function generateScene(scene) { // adds background
 
 
 function generateOptions(choices){
+    if(!isPlaying) return; //not advance if not playing
     if (isReading) return;
+
 
     gameText.classList.add(`notActive`);
     options.classList.remove(`notActive`);
@@ -74,12 +85,12 @@ function generateOptions(choices){
         option.addEventListener("click", () => {
             isReading = true; //clicking immediately allows click to advance to happen
 
-            currentPlayer.decisions.push(`${choice.text}`); //update Player history
-            playerImpact(choice.impact);
-
             currentScene = story[choice.nextStep]; //update scene
-            checkHealth();
+            playerImpact(choice.impact); //impacting stats
+            checkHealth(); //if below 0, death scene
             advanceText(currentScene);
+
+            currentPlayer.decisions.push(`${choice.text}`); //update Player history
         })
 
     });
@@ -87,8 +98,10 @@ function generateOptions(choices){
 
 
 function advanceText(event){ //array of story chunk
+    if(!isPlaying) return; //not advance if not playing
     if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
-    if (!isReading) return;
+    if (!isReading) return; //if player is not reading, return
+    if (isCombat) return;
 
     gameText.classList.remove(`notActive`);
     options.classList.add(`notActive`);
