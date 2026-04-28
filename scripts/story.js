@@ -65,20 +65,29 @@ export const story = {
         background: ``,
         text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
         choices: [
-            { text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [100, 50, 50, 50, 50], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: true, enemyName: 'Gertrude', enemyStats: [100, 50, 50, 50, 50], enemyAppearance: ``, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
-    mockBattle: {
-        background: ``,
-        text: [],
+    mockBattle:{
         choices: [
-            { text: `Attack` },
-            { text: `Defend` },
-            { text: `Inventory` },
-            { text: `Run Away` }
+            {text: `Attack`},
+            {text: `Defend`},
+            {text: `Inventory`},
+            {text: `Run Away`}
+        ],
+        nextStep: `Victory`
+    },
+
+    Victory: {
+        background: ``,
+        text: [`you won`],
+        choices: [
+            {text: "Go back to sleep", nextStep: "dailyT", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Make some breakfast", nextStep: "dailyGB", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
