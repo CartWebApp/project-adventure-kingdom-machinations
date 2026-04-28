@@ -1,6 +1,6 @@
 import {Player, Enemy, Item, Armor, Weapon} from "./scripts/classes.js";
 import {story} from "./scripts/story.js";
-import {playerImpact, attack, defend, checkHealth} from "./scripts/combatAndStats.js";
+import {playerImpact, enemyImpact, attack, defend, checkHealth, combatExists} from "./scripts/combatAndStats.js";
 
 const background = document.querySelector(".border-container"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
@@ -10,7 +10,7 @@ const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
 const saveFile = document.querySelectorAll(".file");
 const openSaveOverlay = document.getElementById("save-nav");
-const closeSaveOverlau = document.getElementById(`closeSave`);
+const closeSaveOverlay = document.getElementById(`closeSave`);
 
 const playerStats = document.querySelectorAll(".playerStat");
 
@@ -66,6 +66,7 @@ function generateScene(scene) { // adds background
 function generateOptions(choices){
     if(!isPlaying) return; //not advance if not playing
     if (isReading) return;
+    if (isCombat) return;
 
 
     gameText.classList.add(`notActive`);
@@ -78,11 +79,15 @@ function generateOptions(choices){
     gameText.innerHTML = ``;
 
     choices.forEach((choice) => {
+
+
         let option = document.createElement("li"); //creating choice element
         option.innerHTML = `<button>${choice.text}</button>`;
         options.appendChild(option);
 
         option.addEventListener("click", () => {
+            combatExists(choice); //if combat exists, load combat screen
+            if(choice.combat) return;
             isReading = true; //clicking immediately allows click to advance to happen
 
             currentScene = story[choice.nextStep]; //update scene
@@ -119,7 +124,7 @@ openSaveOverlay.addEventListener("click", () => {
     document.getElementById("saveFiles").classList.add("saveActive");
 })
 
-closeSaveOverlau.addEventListener("click", ()=>{
+closeSaveOverlay.addEventListener("click", ()=>{
     document.getElementById("saveFiles").classList.add("notActive");
     document.getElementById("saveFiles").classList.remove("saveActive");
 })
@@ -145,3 +150,6 @@ function pullSaveFiles(){
     let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
     return saveFiles;
 }
+
+let enemy = new Enemy("Bob", [100,10,12,15,100], ``);
+console.log(enemy)
