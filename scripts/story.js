@@ -325,7 +325,7 @@ export const story = {
     },
 
     day3T: {
-        background: "/backgrounds-png/town-outpost.png",
+        background: "/backgrounds-png/alley.png",
         text: [
             `You find Davan Cole at the same cloth merchant's stall. This time he sees you coming and folds his sample of linen without hurry.`,
             `"You got the King's letter," he says.`,
