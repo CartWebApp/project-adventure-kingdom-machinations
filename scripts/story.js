@@ -4,7 +4,7 @@ export const story = {
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!”`,
-            `Your body felt extremely sluggish. Try as you might, it was as if an external force was preventing you from moving at all.`
+            `Your body feels extremely sluggish. Try as you might, it was as if an external force was preventing you from moving at all.`
         ],
 
         choices: [
