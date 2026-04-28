@@ -1,6 +1,6 @@
 export const story = {
     intro: {
-        background: `/backgrounds/battle-vision.avif`,
+        background: `/backgrounds-png/battle-vision.png`,
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!”`,
@@ -15,7 +15,7 @@ export const story = {
     },
 
     intro2W: {
-        background: "/backgrounds/battle-vision.avif",
+        background: "/backgrounds-png/battle-vision.png",
         text: [
             "You reason that you would rather fight than get captured, and you try to fight against the force keeping your body still. The moment you so much as twitch, the men quickly attack.",
             `“UGH-”`,
@@ -31,7 +31,7 @@ export const story = {
     },
 
     intro2H: {
-        background: "/backgrounds/battle-vision.avif",
+        background: "/backgrounds-png/battle-vision.png",
         text: [
             `You reason that talking things out would be best. You try to open your mouth to no avail. The man in front of you steps forward. He readies his spear, “Screw this.”`,
             `“...”`,
@@ -47,7 +47,7 @@ export const story = {
     },
 
     intro2T: {
-        background: "/backgrounds/battle-vision.avif",
+        background: "/backgrounds-png/battle-vision.png",
         text: [
             `You reason that you should surrender; it would probably lead to your survival in this situation. You fight against your sluggish body to set the weapon down. The moment you so much as twitch, the men swiftly attack.`,
             `“AHH-”`,
@@ -63,7 +63,7 @@ export const story = {
     },
 
     deathRIP: {
-        background: "/backgrounds/death.jpg",
+        background: "/backgrounds-png/death.png",
         text: [
             `Oh...`,
             `Seems like you ran out of health...`,

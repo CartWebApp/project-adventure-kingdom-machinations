@@ -22,7 +22,7 @@ let currentPlayer; //creating spot for player
 
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
-    currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
+    currentPlayer = new Player(1, [100,10,10,10,10,100], [], [], [], []); //new Player
 
     document.getElementById("menuNavigation").style.display = `flex`;
     gameText.classList.remove(`notActive`);
