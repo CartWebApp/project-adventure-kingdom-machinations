@@ -10,7 +10,33 @@ export class Player {
     }
 }
 
+export class Enemy {
+    constructor(name, stats, appearance){
+        this.name = name || `` //name
+        this.stats = stats; //array: [HP, STR, INT, FORT, SPD]
+        this.appearance = appearance || ``; //scene url
+    }
+}
+
 export class Item {
+    constructor(name, description, stats, appearance){
+        this.name = name || '';
+        this.description = description || "";
+        this.stats = stats || [];
+        this.appearance = appearance || "";
+    }
+}
+
+export class Armor {
+    constructor(name, description, stats, appearance){
+        this.name = name || '';
+        this.description = description || "";
+        this.stats = stats || [];
+        this.appearance = appearance || "";
+    }
+}
+
+export class Weapon {
     constructor(name, description, stats, appearance){
         this.name = name || '';
         this.description = description || "";
