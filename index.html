@@ -53,10 +53,10 @@
             <button id="gameText" class="notActive"></button> <!--Figure out how to make appear and disappear in JS-->
 
             <ul id="options">
-                <li id="continue-game"><button>New Game</button></li>
-                <li><button>Load Game</button></li>
-                <li><button>Import Game</button></li>
-                <li><button>Export Game</button></li>
+                <li id="continue-game" ><button class="choice">New Game</button></li>
+                <li><button class="choice">Load Game</button></li>
+                <li><button class="choice">Import Game</button></li>
+                <li><button class="choice">Export Game</button></li>
             </ul>
             <nav id="menuNavigation">
                 <ul id="nav-list">
@@ -72,30 +72,51 @@
     </div>
 
     <section id="saveFiles" class="notActive">
+        <img src="/UI and enemies/history.png" alt="save file background">
+        <header>
+            <div></div>
+            <h2>Save Files</h2>
+            <button id="closeSave">&#10008</button>
+        </header>
+        
         <ul>
             <li class="file" id="save0">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #1</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
+                
             </li>
             <li class="file" id="save1">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #2</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
             </li>
             <li class="file" id="save2">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #3</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
+
             </li>
             <li class="file" id="save3">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #4</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
             </li>
             <li class="file" id="save4">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #5</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
             </li>
             <li class="file" id="save5">
-                <img src="./images/border.png" alt="save file scene">
-                <small></small>
+                <button>
+                    <small>Save #6</small>
+                    <img src="./images/saveBorder.png" alt="save file scene">
+                </button>
             </li>
         </ul>
     </section>

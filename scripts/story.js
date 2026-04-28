@@ -4,7 +4,7 @@ export const story = {
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!”`,
-            `Your body felt extremely sluggish. Try as you might, it was as if an external force was preventing you from moving at all.`
+            `Your body feels extremely sluggish. Try as you might, it was as if an external force was preventing you from moving at all.`
         ],
 
         choices: [
@@ -42,7 +42,8 @@ export const story = {
         choices: [
             { text: "Begin your morning training", scene: "", nextStep: "dailyW", impact: [2, 2, 0, 0, 0, 0] },
             { text: "Take a walk outside to calm down", scene: "", nextStep: "dailyGA", impact: [0, 0, 0, 2, 0, 5] },
-            { text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5] }]
+            { text: "Make some breakfast", scene: "", nextStep: "dailyGB", impact: [2, 0, 0, 2, 0, 5] }
+        ]
     },
 
     intro2T: {
