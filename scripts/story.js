@@ -309,7 +309,7 @@ export const story = {
         ],
 
         choices: [
-            { text: "", nextStep: "", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make your decision", nextStep: "day4", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
         ]
     },
 
@@ -329,7 +329,7 @@ export const story = {
         ],
 
         choices: [
-            { text: "", nextStep: "", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make your decision", nextStep: "day4", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
         ]
     },
 
@@ -350,7 +350,7 @@ export const story = {
         ],
 
         choices: [
-            { text: "", nextStep: "", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make your decision", nextStep: "day4", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
         ]
     },
 
@@ -362,7 +362,20 @@ export const story = {
         ],
 
         choices: [
-            { text: "", nextStep: "", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make your decision", nextStep: "day4", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+        ]
+    },
+
+    day4: {
+        background: "/backgrounds-png/living-room.png",
+        text: [
+            `On the fourth day, before the King's summons, you make a decision. Everything so far has been drifting. Now you have to choose a direction.`
+        ],
+
+        choices: [
+            { text: "Go under Sir Edran", nextStep: "day4W", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Go under Sister Maevis", nextStep: "day4H", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Go to Cole and tell him you want to hear more", nextStep: "day4T", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
