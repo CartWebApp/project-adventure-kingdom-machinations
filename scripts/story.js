@@ -61,51 +61,6 @@ export const story = {
         ]
     },
 
-    mockLeadUp: {
-        background: ``,
-        text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
-        choices: [
-            { text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Gertrude', enemyStats: [100, 50, 50, 50, 50], enemyAppearance: ``, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
-    },
-
-    mockBattle: {
-        choices: [
-            { text: `Attack` },
-            { text: `Defend` },
-            { text: `Inventory` },
-            { text: `Run Away` }
-        ],
-        nextStep: `Victory`
-    },
-
-    Victory: {
-        background: ``,
-        text: [`you won`],
-        choices: [
-            { text: "Go back to sleep", nextStep: "dailyT", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Make some breakfast", nextStep: "dailyGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
-    },
-
-    deathRIP: {
-        background: "/backgrounds-png/death.png",
-        text: [
-            `Oh...`,
-            `Seems like you ran out of health...`,
-            `RIP`
-        ],
-
-        choices: [
-            { text: `Restart your attempt`, nextStep: `intro` },
-            { text: `Load a save file` },
-            { text: `Go to home` }
-        ]
-    },
-
     day1Morning: {
         background: "/backgrounds-png/church.png",
         text: [
@@ -858,6 +813,15 @@ export const story = {
         ],
         choices: [
             { text: "Begin again", nextStep: "intro", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+    mockLeadUp: {
+        background: ``,
+        text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
+        choices: [
+            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: true, enemyName: 'Gertrude', enemyStats: [100, 50, 50, 50, 50], enemyAppearance: ``, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
@@ -1709,6 +1673,38 @@ export const story = {
         ],
         choices: [
             { text: "Carry this knowledge forward", nextStep: "w_returnDecision", impact: [0, 0, 5, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+    mockBattle:{
+        choices: [
+            {text: `Attack`},
+            {text: `Defend`},
+            {text: `Inventory`},
+            {text: `Run Away`}
+        ],
+        nextStep: `Victory`
+    },
+
+    Victory: {
+        background: ``,
+        text: [`you won`],
+        choices: [
+            {text: "Go back to sleep", nextStep: "dailyT", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: "Make some breakfast", nextStep: "dailyGB", impact: [0,0,0,0,0,0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    deathRIP: {
+        background: "./backgrounds/death.jpg",
+        text: [
+            `Oh...`,
+            `Seems like you ran out of health...`,
+            `RIP`
+        ],
+
+        choices: [
+            { text: `Restart your attempt`, nextStep: `intro`},
+            { text: `Load a save file` },
+            { text: `Go to home` }
         ]
     }
 }

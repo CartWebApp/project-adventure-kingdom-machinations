@@ -1,6 +1,7 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
 import {Player, Enemy, Item, Armor, Weapon} from "./classes.js";
 import {story} from "./story.js";
+import {advanceText, deathScene, generateScene} from "../script.js";
 
 let currentScene = ``;
 let clicks = 0;
@@ -50,7 +51,6 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
 
         if (playerStatsArray[0] <= 0){
             isAlive = false; //death
-            return;
         } else {
             enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
             enemyStats.forEach((stat, index) => { //enemy lose health
@@ -73,6 +73,9 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
             playerStats.forEach((stat, index) => { //player lose health
                 stat.innerHTML = `${playerStatsArray[index]}`;
             })
+            if (playerStatsArray[0] <= 0){
+                isAlive = false; //death
+            }
         }
     }
 
@@ -96,13 +99,13 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
 
         if (playerStatsArray[0] <= 0){
             isAlive = false; //death
-            return;
         } else {
             enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
             enemyStats.forEach((stat, index) => { //enemy lose health
                 stat.innerHTML = `${enemyStatsArray[index]}`;
             })
         }
+        
     } else { //player attack first
         enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
         enemyStats.forEach((stat, index) => { //enemy lose health
@@ -113,11 +116,15 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
             isReading = true;//victory!
             isCombat = false;
             currentScene = currentScene.nextStep;
-            return;
         } else {
             playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0;
             playerStats.forEach((stat, index) => { //player lose health
                 stat.innerHTML = `${playerStatsArray[index]}`;
+
+            if (playerStatsArray[0] <= 0){
+                isAlive = false; //death
+            }
+
             })
         }
     }
@@ -131,11 +138,10 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
 }
 
 export function checkHealth(){
-    if(!isAlive) return;
-    clicks = 0; //reset and move to death screen
-    isAlive = false;
-    isReading = true;
-    currentScene = `deathRIP`;
+    if(isAlive) return;
+    console.log('player is dead')
+
+    deathScene();
 }
 
 export function combatExists(choice){
@@ -183,3 +189,4 @@ export function combatExists(choice){
         })
     })
 }
+
