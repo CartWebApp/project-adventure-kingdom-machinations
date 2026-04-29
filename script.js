@@ -77,9 +77,7 @@ function generateOptions(choices){
     options.innerHTML = ``;
     gameText.innerHTML = ``;
 
-    choices.forEach((choice) => {
-
-
+    choices.forEach((choice, index) => {
         let option = document.createElement("li"); //creating choice element
         option.innerHTML = `<button>${choice.text}</button>`;
         options.appendChild(option);
@@ -87,14 +85,32 @@ function generateOptions(choices){
         option.addEventListener("click", () => {
             combatExists(choice); //if combat exists, load combat screen
             if(choice.combat) return;
-            isReading = true; //clicking immediately allows click to advance to happen
+            console.log(`option was clicked`);
 
-            currentScene = story[choice.nextStep]; //update scene
-            playerImpact(choice.impact); //impacting stats
-            checkHealth(); //if below 0, death scene
-            advanceText(currentScene);
+            if (!isAlive && index == 1){ //open inventory
+                //load a save file
+            } else if (!isAlive && index == 2){ //go to home
+                window.location.reload();
+            } else {
+                isReading = true; //clicking immediately allows click to advance to happen
 
-            currentPlayer.decisions.push(`${choice.text}`); //update Player history
+                currentScene = story[choice.nextStep]; //update scene
+                playerImpact(choice.impact); //impacting stats
+
+                advanceText(currentScene);
+                generateScene(currentScene);
+
+                if (!isAlive && index == 0){
+                    playerStats.forEach((stat, index) => {
+                        stat.innerHTML = `${currentPlayer.stats[index]}`; //adds/subtracts story impact number to list
+                    })
+                    return; 
+                } else{
+                    currentPlayer.decisions.push(`${choice.text}`); //update Player history
+                }
+
+            }
+            
         })
 
     });
@@ -113,6 +129,7 @@ export function advanceText(event){ //array of story chunk
     gameText.innerHTML = `${event.text[clicks]}`; //insert into textbox
 
     currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
+    console.log(`Advance Text`)
 }
 
 
@@ -157,6 +174,17 @@ export function deathScene(){
     clicks = 0;
     advanceText(currentScene);
     generateScene(currentScene);
+}
+
+export function combatOver(){
+    isReading = true;
+    isCombat = false;
+    clicks = 0;
+    console.log(currentScene);
+    currentScene = story[currentScene.nextStep];
+    console.log(currentScene);
+    generateScene(currentScene);
+    advanceText(currentScene);
 }
 
 let enemy = new Enemy("Bob", [100,10,12,15,100], ``);

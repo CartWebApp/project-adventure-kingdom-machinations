@@ -1,7 +1,7 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
 import {Player, Enemy, Item, Armor, Weapon} from "./classes.js";
 import {story} from "./story.js";
-import {advanceText, deathScene, generateScene} from "../script.js";
+import {advanceText, deathScene, generateScene, combatOver} from "../script.js";
 
 let currentScene = ``;
 let clicks = 0;
@@ -56,6 +56,13 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
             enemyStats.forEach((stat, index) => { //enemy lose health
                 stat.innerHTML = `${enemyStatsArray[index]}`;
             })
+
+            if (enemyStatsArray[0] <= 0){
+                isReading = true;//victory!
+                isCombat = false;
+                currentScene = story[currentScene.nextStep];
+                combatOver();
+            }
         }
     } else { //player attack first
         enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
@@ -66,8 +73,8 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
         if (enemyStatsArray[0] <= 0){
             isReading = true;//victory!
             isCombat = false;
-            currentScene = currentScene.nextStep;
-            return;
+            currentScene = story[currentScene.nextStep];
+            combatOver();
         } else {
             playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0;
             playerStats.forEach((stat, index) => { //player lose health
@@ -104,6 +111,13 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
             enemyStats.forEach((stat, index) => { //enemy lose health
                 stat.innerHTML = `${enemyStatsArray[index]}`;
             })
+            
+            if (enemyStatsArray[0] <= 0){
+                isReading = true;//victory!
+                isCombat = false;
+                currentScene = story[currentScene.nextStep];
+                combatOver();
+            }
         }
         
     } else { //player attack first
@@ -115,7 +129,8 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
         if (enemyStatsArray[0] <= 0){
             isReading = true;//victory!
             isCombat = false;
-            currentScene = currentScene.nextStep;
+            currentScene = story[currentScene.nextStep];
+            combatOver();
         } else {
             playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0;
             playerStats.forEach((stat, index) => { //player lose health
@@ -154,6 +169,8 @@ export function combatExists(choice){
     
     background.style.setProperty('--scene-bg', `url(${enemy.appearance})`); //changes background
     console.log(`these are the enemy: ${enemy.stats}`)
+
+    document.querySelector(`.enemyName`).innerHTML = `${enemy.name}`;
     enemyImpact(enemy.stats);
 
     options.innerHTML = ``; //clearing
@@ -170,6 +187,9 @@ export function combatExists(choice){
         options.appendChild(option);
 
         option.addEventListener("click", () => {
+            if (!isCombat) return;
+            console.log(`COMBAT`);
+            
             if (index === 0){ //attack
                 attack(currentPlayer.stats, enemy.stats);
                 checkHealth();
@@ -182,9 +202,8 @@ export function combatExists(choice){
                 //open inventory logic
             }
             if (index === 3){ //run away, change scene
-                isReading = true;
-                isCombat = false;
-                currentScene = currentScene.nextStep;
+                combatOver();
+                console.log(`running away`)
             }
         })
     })

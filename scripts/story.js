@@ -865,15 +865,6 @@ export const story = {
             { text: "Begin again", nextStep: "intro", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
-    mockLeadUp: {
-        background: ``,
-        text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
-        choices: [
-            { text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Gertrude', enemyStats: [100, 50, 50, 50, 50], enemyAppearance: ``, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
-    },
 
     w_endKingslayer: {
         background: "/backgrounds-png/throneroom.png",
@@ -1782,20 +1773,31 @@ export const story = {
 
         choices: [
             { text: "Carry this knowledge forward", nextStep: "w_returnDecision", impact: [0, 0, 5, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
-    },
-    mockBattle: {
+        ]},
+
+    mockBattle:{
         choices: [
-            { text: `Attack` },
-            { text: `Defend` },
-            { text: `Inventory` },
-            { text: `Run Away` }
+            {text: `Attack`},
+            {text: `Defend`},
+            {text: `Inventory`},
+            {text: `Run Away`, nextStep: `victory`}
         ],
-        nextStep: `Victory`
+        nextStep: `victory`
     },
 
-    Victory: {
-        background: ``,
+    mockLeadUp: {
+        background: `/backgrounds-png/alley.png`,
+        text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
+        choices: [
+            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: true, enemyName: 'Gertrude', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
+            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ],
+        nextStep: `victory`
+    },
+
+    victory: {
+        background: `/backgrounds-png/battle-vision.png`,
         text: [`you won`],
         choices: [
             { text: "Go back to sleep", nextStep: "dailyT", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
@@ -1813,9 +1815,9 @@ export const story = {
         ],
 
         choices: [
-            { text: `Restart your attempt`, nextStep: `intro` },
-            { text: `Load a save file` },
-            { text: `Go to home` }
+            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0,0,0,0,0,0]},
+            { text: `Load a save file`, combat: false, impact: [0,0,0,0,0,0] },
+            { text: `Go to home`, combat: false, impact: [0,0,0,0,0,0] }
         ]
     },
 }
