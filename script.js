@@ -26,7 +26,7 @@ let currentPlayer; //creating spot for player
 
 
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
-    currentScene = story.mockLeadUp;
+    currentScene = story.intro;
     currentPlayer = new Player(1, [100,10,10,10,10,100], [], [], [], []); //new Player
     isPlaying = true;
 
