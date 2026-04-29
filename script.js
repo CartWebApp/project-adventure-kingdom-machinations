@@ -26,7 +26,7 @@ let currentPlayer; //creating spot for player
 
 
 newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to intro. Note: will clear local storage.
-    currentScene = story.intro;
+    currentScene = story.mockLeadUp;
     currentPlayer = new Player(1, [100,10,10,10,10,100], [], [], [], []); //new Player
     isPlaying = true;
 
@@ -51,14 +51,13 @@ gameText.addEventListener("click", () => {
     gameText.classList.remove(`notActive`);
     options.classList.add(`notActive`);
     currentPlayer.clicks = clicks;
-
-    checkHealth();
+    
     generateScene(currentScene);
     advanceText(currentScene); //onto next text
     generateOptions(currentScene.choices); //will only run once text run out
 })
 
-function generateScene(scene) { // adds background
+export function generateScene(scene) { // adds background
     background.style.setProperty('--scene-bg', `url(${scene.background})`); //changes background
 }
 
@@ -102,12 +101,11 @@ function generateOptions(choices){
 }
 
 
-function advanceText(event){ //array of story chunk
+export function advanceText(event){ //array of story chunk
     if(!isPlaying) return; //not advance if not playing
-    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     if (!isReading) return; //if player is not reading, return
     if (isCombat) return;
-
+    if (clicks >= event.text.length) isReading = false; //if making a decision, does not run 
     gameText.classList.remove(`notActive`);
     options.classList.add(`notActive`);
 
@@ -149,6 +147,16 @@ saveFile.forEach((file, index) => {
 function pullSaveFiles(){
     let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
     return saveFiles;
+}
+
+export function deathScene(){
+    isAlive = false;
+    isReading = true;
+    isCombat = false;
+    currentScene = story.deathRIP;
+    clicks = 0;
+    advanceText(currentScene);
+    generateScene(currentScene);
 }
 
 let enemy = new Enemy("Bob", [100,10,12,15,100], ``);
