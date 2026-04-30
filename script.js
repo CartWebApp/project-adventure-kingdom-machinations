@@ -13,6 +13,7 @@ const openSaveOverlay = document.getElementById("save-nav");
 const closeSaveOverlay = document.getElementById(`closeSave`);
 
 const playerStats = document.querySelectorAll(".playerStat");
+const enemyStatBar = document.getElementById(`enemyStats`);
 
 let isReading = true;
 let isCombat = false;
@@ -48,6 +49,7 @@ gameText.addEventListener("click", () => {
 
     clicks++
 
+    enemyStatBar.classList.add(`noEnemy`);
     gameText.classList.remove(`notActive`);
     options.classList.add(`notActive`);
     currentPlayer.clicks = clicks;
@@ -74,12 +76,12 @@ function generateOptions(choices){
     clicks = 0; //resetting clicks
     currentPlayer.clicks = clicks;
 
-    options.innerHTML = ``;
+    options.innerHTML = ``; //resetting
     gameText.innerHTML = ``;
 
     choices.forEach((choice, index) => {
         let option = document.createElement("li"); //creating choice element
-        option.innerHTML = `<button>${choice.text}</button>`;
+        option.innerHTML = `<button>${choice.text}</button>`; //including button
         options.appendChild(option);
 
         option.addEventListener("click", () => {
@@ -107,6 +109,7 @@ function generateOptions(choices){
                     return; 
                 } else{
                     currentPlayer.decisions.push(`${choice.text}`); //update Player history
+                    console.log(currentPlayer)
                 }
 
             }

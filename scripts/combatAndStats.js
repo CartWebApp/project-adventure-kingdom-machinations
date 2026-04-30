@@ -17,7 +17,8 @@ const saveFile = document.querySelectorAll(".file");
 const openSaveOverlay = document.getElementById("save-nav");
 const closeSaveOverlay = document.getElementById(`closeSave`);
 const playerStats = document.querySelectorAll(".playerStat");
-const enemyStats = document.querySelectorAll(`.enemyStat`)
+const enemyStats = document.querySelectorAll(`.enemyStat`);
+const enemyStatBar = document.getElementById(`enemyStats`);
 
 let isCombat = false;
 let isAlive = true;
@@ -163,6 +164,7 @@ export function combatExists(choice){
     isCombat = choice.combat;
     if (!choice.combat) return;
 
+    enemyStatBar.classList.remove(`noEnemy`);
     isReading = false; //not reading
     let enemy = new Enemy(choice.enemyName, choice.enemyStats, choice.enemyAppearance); //enemy holder
     console.log(enemy);

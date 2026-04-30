@@ -364,13 +364,17 @@ nav {
 #playerStats {
     background: black;
     width: 100%;
-    display: flex;
     justify-content: center;
     gap: clamp(4px, 2vw, 20px);
     padding: 5px 0;
     color: white;
+    display: flex;
     font-family: "Jacquard 24", cursive;
     list-style-type: none;
+}
+
+.noEnemy{
+    opacity: 0%;
 }
 
 #enemyStats li,
