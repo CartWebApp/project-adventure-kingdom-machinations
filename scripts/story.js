@@ -592,10 +592,10 @@ export const story = {
             `Rugol is a full forward position—real fighting, real losses. Zirnak—" He pauses. "I'd rather you weren't sent to Zirnak. But if you insist, I won't stop you."`
         ],
         choices: [
-            { text: "Torlol Outpost — light border patrol", nextStep: "w_outpostTorlol", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Hostels Outpost — regular skirmishes", nextStep: "w_outpostHostels", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Rugol Outpost —  intense combat", nextStep: "w_outpostRugol", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Zirnak Outpost —  heavy casualties", nextStep: "w_outpostZirnak", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Torlol Outpost — light border patrol", nextStep: "w_outpostTorlol", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Hostels Outpost — regular skirmishes", nextStep: "w_outpostHostels", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Rugol Outpost —  intense combat", nextStep: "w_outpostRugol", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Zirnak Outpost —  heavy casualties", nextStep: "w_outpostZirnak", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -677,7 +677,7 @@ export const story = {
         choices: [
             { text: "Infiltrate the enemy kingdom and find Kael yourself", nextStep: "w_infiltrate", impact: [0, 0, 3, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Report back to King Hadvar and request royal support", nextStep: "w_reportKing", impact: [0, 0, 3, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Press the attack on your current position", nextStep: "w_doubleDown", impact: [0, 0, 3, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Press the attack on your current position", nextStep: "w_doubleDown", impact: [0, 0, 3, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -706,7 +706,7 @@ export const story = {
             `"I was told to expect someone like you," he says. His voice is quieter than you expected.`
         ],
         choices: [
-            { text: "Attack immediately—end this before it complicates itself", nextStep: "w_kaelFight", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack immediately—end this before it complicates itself", nextStep: "w_kaelFight", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Ask him what he knows about the prophecy", nextStep: "w_kaelTalk", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Tell him you're not here to fight—propose something else", nextStep: "w_kaelAlliance", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
@@ -723,7 +723,7 @@ export const story = {
             `[+5 STR, +5 FORT, -30 SAN — Received: Ashen Blade Fragment +5 STR]`
         ],
         choices: [
-            { text: "Fight your way back to Aldenmere", nextStep: "w_fightBack", impact: [0, 5, 0, 5, 0, -30], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Fight your way back to Aldenmere", nextStep: "w_fightBack", impact: [0, 5, 0, 5, 0, -30], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -740,7 +740,7 @@ export const story = {
             `[+8 INT, +5 SAN]`
         ],
         choices: [
-            { text: "Fight your way back together, present both kingdoms with proof", nextStep: "w_fightBack", impact: [0, 0, 8, 0, 0, 5], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Fight your way back together, present both kingdoms with proof", nextStep: "w_fightBack", impact: [0, 0, 8, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -756,7 +756,7 @@ export const story = {
             `[+6 INT, +4 SAN]`
         ],
         choices: [
-            { text: "Fight your way back to Aldenmere together", nextStep: "w_fightBack", impact: [0, 0, 6, 0, 0, 4], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Fight your way back to Aldenmere together", nextStep: "w_fightBack", impact: [0, 0, 6, 0, 0, 4], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -778,8 +778,8 @@ export const story = {
             `You return to King Hadvar and report what you've learned about Kael. His eyes brighten in a way that makes you uncomfortable.`
         ],
         choices: [
-            { text: "Request the full royal army be deployed against Kael", nextStep: "w_reportKingArmy", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Propose going alone or with a small team", nextStep: "w_reportKingAlone", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Request the full royal army be deployed against Kael", nextStep: "w_reportKingArmy", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Propose going alone or with a small team", nextStep: "w_reportKingAlone", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -801,7 +801,7 @@ export const story = {
             `[+7 STR, +6 SPD, -30 SAN]`
         ],
         choices: [
-            { text: "Return and face what comes next", nextStep: "w_fightBack", impact: [0, 7, 0, 0, 6, -30], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Return and face what comes next", nextStep: "w_fightBack", impact: [0, 7, 0, 0, 6, -30], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -1137,7 +1137,7 @@ export const story = {
         ],
         choices: [
             { text: "Stop and help the refugees before continuing", nextStep: "h_refugeeH", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Attack — Vorthane civilians in Aldenmere territory are a security risk", nextStep: "h_refugeeW", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack — Vorthane civilians in Aldenmere territory are a security risk", nextStep: "h_refugeeW", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Pass by without engaging — you have an assignment", nextStep: "h_refugeeT", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
@@ -1152,7 +1152,7 @@ export const story = {
             `[+6 INT, +5 SAN]`
         ],
         choices: [
-            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 6, 0, 0, 5], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 6, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -1163,18 +1163,18 @@ export const story = {
             `[-15 SAN]`
         ],
         choices: [
-            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 0, 0, 0, -15], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 0, 0, 0, -15], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
     h_refugeeT: {
         background: "/backgrounds-png/town-outpost.png",
         text: [
-            `You keep walking. You tell yourself you can't help everyone. This is true. It does not help.`,
+            `You keep walking. You tell yourself you can't help everyone. This is false. It does not help.`,
             `[-3 SAN]`
         ],
         choices: [
-            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 0, 0, 0, -3], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Continue to your assigned outpost", nextStep: "h_outpostBattle", impact: [0, 0, 0, 0, 0, -3], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -1226,7 +1226,7 @@ export const story = {
             `One must end."`
         ],
         choices: [
-            { text: "Attack Kael", nextStep: "h_cathedralAttack", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack Kael", nextStep: "h_cathedralAttack", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Sacrifice yourself", nextStep: "h_cathedralSacrifice", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Argue against the goddess", nextStep: "h_cathedralArgue", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
@@ -1392,7 +1392,7 @@ export const story = {
             `The Vorthane border patrol finds you within the first hour. Whether this is bad luck or Davan's plan is unclear. He has, at this point, disappeared.`
         ],
         choices: [
-            { text: "Try to fight your way free", nextStep: "t_captureW", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Try to fight your way free", nextStep: "t_captureW", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Surrender and try to talk your way out", nextStep: "t_captureH", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Claim you were always on their side — you have come to join them", nextStep: "t_captureT", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
@@ -1587,10 +1587,10 @@ export const story = {
             `After six weeks of training, Commander Sevik assigns you to an outpost. You have some say in where you go.`
         ],
         choices: [
-            { text: "Kandu Outpost — light border patrol", nextStep: "t_outpostKandu", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Ora Outpost — regular skirmishes with Aldenmere", nextStep: "t_outpostOra", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Ebote Outpost — constant fighting", nextStep: "t_outpostEbote", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Corinth Outpost — deep in trenches", nextStep: "t_outpostCorinth", impact: [0, 0, 0, 0, 0, 0], combat: true, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Kandu Outpost — light border patrol", nextStep: "t_outpostKandu", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Ora Outpost — regular skirmishes with Aldenmere", nextStep: "t_outpostOra", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Ebote Outpost — constant fighting", nextStep: "t_outpostEbote", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Corinth Outpost — deep in trenches", nextStep: "t_outpostCorinth", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
