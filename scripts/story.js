@@ -24,9 +24,9 @@ export const story = {
         ],
 
         choices: [
-            { text: "Begin your morning training", nextStep: "day1Morning", impact: [2, 2, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Take a walk outside to calm down", nextStep: "day1Morning", impact: [0, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Make some breakfast", nextStep: "day1Morning", impact: [2, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin your morning training", nextStep: "dailyW", impact: [5, 5, 0, 2, 2, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [2, 0, 0, 2, 2, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 1, 0, 5, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -40,9 +40,9 @@ export const story = {
         ],
 
         choices: [
-            { text: "Begin your morning training", nextStep: "day1Morning", impact: [2, 2, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Take a walk outside to calm down", nextStep: "day1Morning", impact: [0, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Make some breakfast", nextStep: "day1Morning", impact: [2, 0, 0, 2, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }]
+            { text: "Read a book to calm down", nextStep: "dailyH", impact: [2, 0, 10, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [2, 0, 0, 2, 2, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 1, 0, 5, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }]
     },
 
     intro2T: {
@@ -55,9 +55,65 @@ export const story = {
         ],
 
         choices: [
-            { text: "Go back to sleep", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Take a walk outside to calm down", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Make some breakfast", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Go back to sleep", nextStep: "dailyT", impact: [0, 0, 0, 0, -2, -2], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [2, 0, 0, 2, 2, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 1, 0, 5, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyW:{
+        background: '/backgrounds-png/training.png',
+        text: [
+            'You walk to the training center in the middle of town to train and workout after your dream.',
+            'In the middle of training a priest runs out of the church nearby and comes straight to you.'
+        ],
+
+        choices: [
+            { text: "[+5 HP, +5 STR, +2 FORT, +2 SPD]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    dailyT:{
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you fall back into an uncomfortable slumber.',
+        ],
+
+        choices: [
+            { text: "[-2 FORT, -2 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    dailyH:{
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you decide you want to read and calm down. In the middle of your book you are interrupted.',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +10 INT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    dailyGA:{
+        background: '/backgrounds-png/village-General.png',
+        text: [
+            'To rejuvenate yourself after the terrible dream you decide to take a walk. You peacefully roam around town.',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +2 FORT, +2 SPD, +5 SAN]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+        ]
+    },
+
+    dailyGB:{
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you decide you want to make some breakfast. Yum!',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +1 STR, +5 FORT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
         ]
     },
 
@@ -65,6 +121,55 @@ export const story = {
         background: "/backgrounds-png/church.png",
         text: [
             `The bishop's words hang over your head like a storm cloud that refuses to pass. You leave him standing in the doorway—or on the church steps—and try to return to your life.`,
+            `But Brenwall has changed. Or maybe you have. The royal soldiers in their black-and-gold livery are posted at the market entrance now.`,
+            `People stop talking when you walk by. The church bells seem to ring a little longer than they used to.`,
+            `You have a few days before the pressure becomes unavoidable.`
+        ],
+        choices: [
+            { text: `The morning after the bishop's visit, you wake with your jaw clenched. Another nightmare—another field of bodies, another sky the color of rust.`, nextStep: "day1Morning2", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }]
+    },
+
+    day1MorningWGA: {
+        background: "/backgrounds-png-enemies/church-friend.png",
+        text: [
+            'While outside, you approach the church, and you see someone waving at you.',
+            'It was the Bishop. He was someone you often confided in when it came to trying to resolve your nightmares. He seemed strangely frantic.',
+            `“The Goddess has sent down a prophecy, and I'm confident it's you!”`,
+            `“The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!”`,
+            `“The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!”`,
+            `“No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!”`,
+            `“Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
+            `"It's possible that you died with many regrets, and your previous life is trying to convey that to you!"`,
+            `"It won't be long before the King starts tracking you down."`,
+            `"Either you join the church and learn more about the Goddess's plans, or you join the King to fight the other kingdom in the name of peace."`,
+            `“I don't know…it's all too soon. I'll need some time to think about it.”`,
+            `“Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church.”`,
+            `The bishop's words hang over your head like a storm cloud that refuses to pass. You leave him standing on the church steps and try to return to your life.`,
+            `But Brenwall has changed. Or maybe you have. The royal soldiers in their black-and-gold livery are posted at the market entrance now.`,
+            `People stop talking when you walk by. The church bells seem to ring a little longer than they used to.`,
+            `You have a few days before the pressure becomes unavoidable.`
+        ],
+        choices: [
+            { text: `The morning after the bishop's visit, you wake with your jaw clenched. Another nightmare—another field of bodies, another sky the color of rust.`, nextStep: "day1Morning2", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }]
+    },
+
+    day1MorningHTGB: {
+        background: "/backgrounds-png/bedroom.png",
+        text: [
+            `*KNOCK KNOCK*`,
+            `You quickly open the door.`,
+            `It was bishop! He was someone you often confided in when it came to trying to resolve your constant visions of combat. He seemed strangely frantic.`,
+            `“The Goddess has sent down a prophecy, and I'm confident it's you!”`,
+            `“The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!”`,
+            `“The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!”`,
+            `“No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!”`,
+            `“Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
+            `"It's possible that you died with many regrets, and your previous life is trying to convey that to you!"`,
+            `"It won't be long before the King starts tracking you down."`,
+            `"Either you join the church and learn more about the Goddess's plans, or you join the King to fight the other kingdom in the name of peace."`,
+            `“I don't know…it's all too soon. I'll need some time to think about it.”`,
+            `“Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church.”`,
+            `The bishop's words hang over your head like a storm cloud that refuses to pass. You leave him standing in the doorway and try to return to your life.`,
             `But Brenwall has changed. Or maybe you have. The royal soldiers in their black-and-gold livery are posted at the market entrance now.`,
             `People stop talking when you walk by. The church bells seem to ring a little longer than they used to.`,
             `You have a few days before the pressure becomes unavoidable.`
