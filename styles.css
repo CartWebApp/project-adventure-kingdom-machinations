@@ -225,7 +225,8 @@ nav {
 
 
 /*Save Files overlay*/
-#saveFiles {
+#saveFiles,
+#loadFiles {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -237,7 +238,8 @@ nav {
     overflow: hidden;
 }
 
-#saveFiles > header{
+#saveFiles > header,
+#loadFiles > header{
     position: relative;
     z-index: 1;
     font-size: clamp(28px, 5vw, 48px);
@@ -249,7 +251,8 @@ nav {
     width: clamp(300px, 85%, 750px);
 }
 
-#saveFiles > img {
+#saveFiles > img,
+#loadFiles > img {
     position: absolute;
     width: clamp(330px, 95vw, 1000px);
     height: 100%;
@@ -265,8 +268,13 @@ nav {
     display: flex;
 }
 
+.loadActive {
+    display: flex;
+}
 
-#saveFiles>ul {
+
+#saveFiles>ul,
+#loadFiles > ul {
     display: grid;
     height: 75%;
     width: clamp(300px, 90%, 750px);
@@ -278,36 +286,44 @@ nav {
     z-index: 1;
 }
 
-.file{
+.file,
+.loadFile{
     height: max-content;
 }
 
-.file > button:hover{
+.file > button:hover,
+.loadFile > button:hover{
     cursor: pointer;
 }
 
-.file > button:focus{
+.file > button:focus,
+.loadFile > button:focus{
     outline: none;
 }
 
 .file > button:hover > img,
-.file > button:focus > img{
+.file > button:focus > img,
+.loadFile > button:hover > img,
+.loadFile > button:focus > img{
     box-shadow: 0px 0px 2px 1px red;
 }
 
-.file button {
+.file button,
+.loadFile button {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.file img {
+.file img,
+.loadFile img {
     width: 90%;
     background-image: url(./backgrounds/death.jpg);
     background-size: contain;
 }
 
-#closeSave{
+#closeSave,
+#closeLoad{
     font-size: clamp(32px, 4vw, 32px);
 }
 
