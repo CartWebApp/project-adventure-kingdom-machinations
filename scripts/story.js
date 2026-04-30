@@ -1,6 +1,6 @@
 export const story = {
     intro: {
-        background: `/backgrounds-png/battle-vision.png`,
+        background: `/backgrounds-png-enemies/battle-vision-intro.png`,
         text: [
             "You find yourself in the midst of battle, armed with only a dagger. A squad of 10 men surround you, carrying shields and spears.",
             `"Freeze! Do not move!"`,
@@ -15,7 +15,7 @@ export const story = {
     },
 
     intro2W: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: `/backgrounds-png-enemies/battle-vision-intro.png`,
         text: [
             "You reason that you would rather fight than get captured, and you try to fight against the force keeping your body still. The moment you so much as twitch, the men quickly attack.",
             `"UGH-"`,
@@ -31,7 +31,7 @@ export const story = {
     },
 
     intro2H: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: `/backgrounds-png-enemies/battle-vision-intro.png`,
         text: [
             `You reason that talking things out would be best. You try to open your mouth to no avail. The man in front of you steps forward. He readies his spear, "Screw this."`,
             `"..."`,
@@ -46,7 +46,7 @@ export const story = {
     },
 
     intro2T: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: `/backgrounds-png-enemies/battle-vision-intro.png`,
         text: [
             `You reason that you should surrender; it would probably lead to your survival in this situation. You fight against your body to set the weapon down. The moment you do so, the men swiftly attack.`,
             `"AHH-"`,
@@ -195,7 +195,7 @@ export const story = {
 
 
     day1W: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `You make your way toward the drill yard on the northern edge of town. A company of twenty soldiers is running formation exercises under the bark of a broad-shouldered sergeant.`,
             `You watch from the fence. The movements are mechanical, deliberate—nothing like the frantic chaos in your visions.`,
@@ -212,7 +212,7 @@ export const story = {
     },
 
     day1H: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `The bishop, Brother Callen, is in the middle of leading morning prayers when you arrive.`,
             `He spots you immediately and wraps things up early, pulling you into the vestibule with an expression of barely-contained urgency.`,
@@ -379,7 +379,7 @@ export const story = {
     },
 
     day3H: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `Sister Maevis is lighting candles in the nave when you arrive.`,
             `She's perhaps sixty, with sharp dark eyes and the unhurried movements of someone who has learned that patience is more productive than urgency.`,
@@ -401,7 +401,7 @@ export const story = {
     },
 
     day3T: {
-        background: "/backgrounds-png/alley.png",
+        background: "/backgrounds-png-enemies/alley-cole.png",
         text: [
             `You find Davan Cole at the same cloth merchant's stall. This time he sees you coming and folds his sample of linen without hurry.`,
             `"You got the King's letter," he says.`,
@@ -453,7 +453,7 @@ export const story = {
     // wrath route
 
     day4W: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-sirDeran.png",
         text: [
             `You arrive at Sir Edran's yard before the sun is properly up. He's already there, in a padded sparring doublet, with two wooden practice blades resting against the fence.`,
             `"Good," he says. "You're punctual. That's the first useful quality a soldier can have."`,
@@ -467,7 +467,7 @@ export const story = {
     },
 
     w_firstSpar: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-sirDeran.png",
         text: [
             `It's nothing like the visions. In the visions, your body knows what to do even if you don't. Here, in the waking world, your body is entirely ignorant.`,
             `You block three strikes by luck and take the fourth directly to the ribs.`,
@@ -552,7 +552,7 @@ export const story = {
     },
 
     w_trainingMontage: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-sirDeran.png",
         text: [
             `The barracks are loud, competitive, and exhausting. Under Sir Edran's direction you train daily. You meet the people you will be working alongside.`,
             `Lira Vel—a quick, wiry archer from the eastern farmlands who makes jokes when she's nervous and is always nervous—becomes your closest friend at the barracks.`,
@@ -567,7 +567,7 @@ export const story = {
     },
 
     w_classSelection: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-sirDeran.png",
         text: [
             `"Every soldier in Aldenmere specializes. The military's strength is in coordination between its three branches. You'll need to pick one," Sir Edran says.`,
             `He shows you three paths.`
@@ -580,7 +580,7 @@ export const story = {
     },
 
     w_classArcher: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `You take to the bow with unexpected ease. The stillness required—breath in, breath out, release—suits something in you.`,
             `The visions are less intrusive when your body is still and your mind is entirely focused on a target.`,
@@ -596,7 +596,7 @@ export const story = {
     },
 
     w_classKnight: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-sirDeran.png",
         text: [
             `Edran is a demanding teacher and an unexpectedly thoughtful one. He doesn't just teach you how to swing a sword—he teaches you why. Footwork. Weight distribution.`,
             `How fear changes your breathing and what to do about it.`,
@@ -612,7 +612,7 @@ export const story = {
     },
 
     w_classMage: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `The court's arcanist is a small, ancient woman named Oreth who speaks mostly in questions and finds your combat visions professionally fascinating.`,
             `Battlefield magic in Aldenmere is mostly terrain manipulation, elemental bursts, and enhancement spells that boost your allies' reflexes or slow an opponent's limbs.`,
@@ -688,7 +688,7 @@ export const story = {
     },
 
     w_outpostSelect: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `Eight weeks after entering the barracks, Commander Rael calls your unit together.`,
             `"King Hadvar has authorized a forward deployment. The outposts along the eastern border need reinforcing—Vorthane has been probing them with increased frequency.`,
@@ -787,7 +787,7 @@ export const story = {
     },
 
     w_infiltrate: {
-        background: "/backgrounds-png/alley.png",
+        background: "/backgrounds-png-enemies/alley-cole.png",
         text: [
             `You request a leave of absence from Commander Rael. He grants it without asking why—he has the look of a man who has stopped asking questions about you.`,
             `Lira gives you a Vorthane civilian's travel cloak she's been keeping for exactly no reason she'll explain.`,
@@ -818,7 +818,7 @@ export const story = {
     },
 
     w_kaelFight: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `He is better than you. He has always been better than you. But he is also tired—you can see it in the slight slowness of his second step.`,
             `You have something he doesn't: the instincts from a life of battle that your body remembers even when you don't want it to.`,
@@ -833,7 +833,7 @@ export const story = {
     },
 
     w_kaelTalk: {
-        background: "/backgrounds-png/alley.png",
+        background: "/backgrounds-png-enemies/alley-cole.png",
         text: [
             `Kael's expression shifts—something guarded becoming something more honest.`,
             `"The full text," he says. "You've read it?"`,
@@ -850,7 +850,7 @@ export const story = {
     },
 
     w_kaelAlliance: {
-        background: "/backgrounds-png/alley.png",
+        background: "/backgrounds-png-enemies/alley-cole.png",
         text: [
             `Kael is silent for a long moment.`,
             `"You came here alone," he says. "Without the Aldenmere army."`,
@@ -866,7 +866,7 @@ export const story = {
     },
 
     w_fightBack: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `Whether Kael is your enemy or your unexpected ally, you fight your way back through Vorthane territory to the Aldenmere lines.`,
             `The journey is its own story—ambushes, desperate sprints through forest roads, a night sheltering in the ruins of a village that used to be Vorthane's and is now nobody's.`,
@@ -911,7 +911,7 @@ export const story = {
     },
 
     w_doubleDown: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `You don't retreat. You press. It's the worst decision and you know it's the worst decision and you do it anyway.`,
             `The fighting becomes overwhelming—Vorthane regulars, then officers, then finally Kael himself, deployed to stop you personally.`,
@@ -938,7 +938,7 @@ export const story = {
     },
 
     w_endEradicate: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `The campaign is brutal, decisive, and final. Vorthane's military collapses without Kael as its symbol. Aldenmere forces secure the grain plains and the ports.`,
             `King Hadvar celebrates with the kind of enthusiasm that makes you feel nothing.`,
@@ -992,7 +992,7 @@ export const story = {
     // holy route
 
     day4H: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `You go to the church before the first bells. Sister Maevis is already in the library—a cramped room off the vestibule that smells of old paper and something floral you never identify.`,
             `She has three books open on the desk.`,
@@ -1008,7 +1008,7 @@ export const story = {
     },
 
     h_studyPath: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `Sister Maevis lays out the options available to someone in your position within the church.`
         ],
@@ -1022,7 +1022,7 @@ export const story = {
     // scholar
 
     h_scholarBegin: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `You spend your days in the library and in conversation with every priest, sister, and scholar you can find.`,
             `Brenwall's church turns out to be a hub of opinion—people have traveled here, studied here, and left pieces of their perspectives behind.`,
@@ -1113,7 +1113,7 @@ export const story = {
     // holy warrior
 
     h_holyWarriorBegin: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `Sister Maevis arranges for you to train under the church's small corps of militant defenders—the Wardens. They are not a large force, but they are skilled.`,
             `Their approach to combat is unlike the barracks: they teach you to fight from stillness,`,
@@ -1127,7 +1127,7 @@ export const story = {
     },
 
     h_classSelectionHoly: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `At the end of your initial training, the Head Warden presents you with three specializations.`
         ],
@@ -1182,7 +1182,7 @@ export const story = {
     },
 
     h_inquisitorDuel: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-aldric.png",
         text: [
             `Six weeks into your training, Brother Aldric arrives from the capital church.`,
             `He is young, precise, and very certain of himself. He has been sent to evaluate whether you are genuinely the one the prophecy describes,`,
@@ -1197,7 +1197,7 @@ export const story = {
     },
 
     h_inquisitorWin: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-aldric.png",
         text: [
             `You know the texts. You know them because Sister Maevis made sure you knew them, and you know them because you studied them yourself. Brother Aldric is good.`,
             `You are better. He concedes with evident frustration but genuine correctness.`,
@@ -1211,7 +1211,7 @@ export const story = {
     },
 
     h_inquisitorLose: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-aldric.png",
         text: [
             `You know the broad strokes of the texts. You know them the way someone knows a song they've heard many times but never had to sing. Aldric finds the gaps—not cruelly, but efficiently.`,
             `The church is not withdrawn, exactly. But qualified. Sister Maevis remains steadfast and furious, but quietly so.`,
@@ -1275,7 +1275,7 @@ export const story = {
     h_refugeeT: {
         background: "/backgrounds-png/town-outpost.png",
         text: [
-            `You keep walking. You tell yourself you can't help everyone. This is true. It does not help.`,
+            `You keep walking. You tell yourself you can't help everyone. This is false. It does not help.`,
             `[-3 SAN]`
         ],
         choices: [
@@ -1299,7 +1299,7 @@ export const story = {
     },
 
     h_aidWorkerBegin: {
-        background: "/backgrounds-png/town-outpost.png",
+        background: "/backgrounds-png-enemies/church-friend.png",
         text: [
             `You go among the people. Brenwall's church has a small network of aid stations along the border—place`,
             `where displaced civilians can find food, medicine, and a few days of safety before moving on.`,
@@ -1317,7 +1317,7 @@ export const story = {
     // cathedral, all holy paths meet here
 
     h_cathedralConvergence: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-basement-kael.png",
         text: [
             `Whether you were pushed by Sister Maevis's message, drawn by the burning mark, or simply following your investigation toward its source, you find yourself at the Hearthstone Cathedral.`,
             `It is the largest structure you have ever seen that is not a military fortification—a cathedral of pale stone that spans the neutral territory between the two kingdoms,`,
@@ -1338,7 +1338,7 @@ export const story = {
     },
 
     h_cathedralAttack: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/church-basement-kael.png",
         text: [
             `Kael does not raise his weapon. He looks at you—and he looks at his chest—and he makes a decision with his eyes that his hands confirm when they stay at his sides.`,
             `He is willing to die for this.`,
@@ -1353,7 +1353,7 @@ export const story = {
     },
 
     h_cathedralSacrifice: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-aldric.png",
         text: [
             `You kneel. You tell the goddess you will give up your life if it's required.`,
             `You have had someone else's grief living in your chest your whole life—you understand what sacrifice looks like.`,
@@ -1368,7 +1368,7 @@ export const story = {
     },
 
     h_cathedralArgue: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-basement-kael.png",
         text: [
             `You speak carefully. The prophecy—the full version, in Old Aelaran—does not say one must end. It says the grief must end. The grief that wars make.`,
             `You tell the goddess, with tremendous respect and considerable nerve, that her test is either a genuine test or a choice, and either way the answer is the same: this is not acceptable.`,
@@ -1383,7 +1383,7 @@ export const story = {
     },
 
     h_postCathedral: {
-        background: "/backgrounds-png/church.png",
+        background: "/backgrounds-png-enemies/church-aldric.png",
         text: [
             `You hold the Crest of Unity. The mark on your chest no longer burns.`,
             `Kael (if alive) stands beside you in the empty cathedral looking like a man who has just had a considerable number of assumptions rearranged.`,
@@ -1492,7 +1492,7 @@ export const story = {
     },
 
     t_captureOrJoin: {
-        background: "/backgrounds-png/town-outpost.png",
+        background: "/backgrounds-png-enemies/alley-cole.png",
         text: [
             `The Vorthane border patrol finds you within the first hour. Whether this is bad luck or Davan's plan is unclear. He has, at this point, disappeared.`
         ],
@@ -1620,7 +1620,7 @@ export const story = {
     },
 
     t_vorthaneTraining: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `Accepted into Vorthane's military structure, you begin training. Vorthane's military is leaner and more mobile than Aldenmere's. Less iron, more tactics.`,
             `Mira—a Vorthane sergeant whose village was burned in the last Aldenmere campaign—doesn't trust you and says so openly, which you respect.`,
@@ -1634,7 +1634,7 @@ export const story = {
     },
 
     t_classSelection: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `Vorthane's specializations are different from Aldenmere's in subtle ways—leaner, faster, built for a military that has often had to do more with less.`
         ],
@@ -1646,7 +1646,7 @@ export const story = {
     },
 
     t_classArcher: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `The Vorthane shortbow is lighter and faster than Aldenmere's longbow.`,
             `Different philosophy: where Aldenmere archers are trained to hold a line, Vorthane archers are trained to move, to harry, to never be where the enemy expects.`,
@@ -1660,7 +1660,7 @@ export const story = {
     },
 
     t_classKnight: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `The Vorthane cavalry sword is designed for a mounted fighter but works well on foot for someone with the right instincts. It's lighter than Aldenmere's broadswords, faster.`,
             `Mira's trust increases noticeably—she respects traditional soldiers, and the cavalry sword is an honest choice that requires real skill.`,
@@ -1673,7 +1673,7 @@ export const story = {
     },
 
     t_classMage: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `The Vorthane magical tradition is different from Aldenmere's—less enhancement, more direct.`,
             `The Focus Gem channels elemental energy with precision that Aldenmere's enhancement school lacks.`,
@@ -1687,7 +1687,7 @@ export const story = {
     },
 
     t_outpostSelect: {
-        background: "/backgrounds-png/training.png",
+        background: "/backgrounds-png-enemies/training-soldiers.png",
         text: [
             `After six weeks of training, Commander Sevik assigns you to an outpost. You have some say in where you go.`
         ],
@@ -1836,7 +1836,7 @@ export const story = {
     // vision events, triggered by sanity thresholds in the game logic
 
     vision_combat1: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `Between one engagement and the next, your eyes close for a moment—just a moment—and you are somewhere else.`,
             `A different field. A different sky. The smell is the same. The weight of a different weapon in your hand.`,
@@ -1851,7 +1851,7 @@ export const story = {
     },
 
     vision_combat2: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `This time it lasts longer. Long enough to see the face of the person beside you. Long enough to hear what they're saying.`,
             `Long enough to feel the precise specific weight of knowing you are going to lose this, and that losing this means something final for someone you love.`,
@@ -1865,7 +1865,7 @@ export const story = {
     },
 
     vision_revelation: {
-        background: "/backgrounds-png/battle-vision.png",
+        background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
             `This vision is different.`,
             `You are on the field you always visit—but for the first time, you see the end of it. Not the moment of death. The moment before.`,
