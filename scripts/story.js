@@ -46,7 +46,7 @@ export const story = {
     },
 
     intro2T: {
-        background: `/backgrounds-png-enemies/battle-vision.png`,
+        background: `/backgrounds-png-enemies/battle-vision-intro.png`,
         text: [
             `You reason that you should surrender; it would probably lead to your survival in this situation. You fight against your body to set the weapon down. The moment you do so, the men swiftly attack.`,
             `"AHH-"`,
