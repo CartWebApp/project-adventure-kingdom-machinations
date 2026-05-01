@@ -27,7 +27,7 @@
         <img src="images/border.png" alt="Decorative Border" class="border-img" id="scene">
 
         <div class="inner-content">
-            <ul id="enemyStats">
+            <ul id="enemyStats" class="noEnemy">
                 <li>Name: <span class="enemyName">--</span></li>
                 <li>Health: <span class="enemyStat">0</span></li>
                 <li>Strength: <span class="enemyStat">0</span></li>
@@ -121,11 +121,72 @@
         </ul>
     </section>
     
-<!--
-    <section id="inventory">
-        <img src="UI and enemies/history.png" alt="inventory scroll">
+    <section id="loadFiles" class="notActive">
+        <img src="/UI and enemies/history.png" alt="load file background">
+        <header>
+            <div></div>
+            <h2>Load Files</h2>
+            <button id="closeLoad">&#10008</button>
+        </header>
+        
+        <ul>
+            <li class="loadFile" id="load0">
+                <button>
+                    <small>Save #1</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+                
+            </li>
+            <li class="loadFile" id="load1">
+                <button>
+                    <small>Save #2</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+            </li>
+            <li class="loadFile" id="load2">
+                <button>
+                    <small>Save #3</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+
+            </li>
+            <li class="loadFile" id="load3">
+                <button>
+                    <small>Save #4</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+            </li>
+            <li class="loadFile" id="load4">
+                <button>
+                    <small>Save #5</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+            </li>
+            <li class="loadFile" id="load5">
+                <button>
+                    <small>Save #6</small>
+                    <img src="./images/saveBorder.png" alt="load file scene">
+                </button>
+            </li>
+        </ul>
     </section>
--->
+    <section id="inventory" class="notActive">
+        <img src="/UI and enemies/history.png" alt="inventory file background">
+        <header>
+            <div></div>
+            <h2>Inventory</h2>
+            <button id="closeInventory">&#10008</button>
+        </header>
+    </section>
+    <section id="gameHistory" class="notActive">
+        <img src="/UI and enemies/history.png" alt="history file background">
+        <header>
+            <div></div>
+            <h2>History</h2>
+            <button id="closeHistory">&#10008</button>
+        </header>
+        <span id="gameHistoryText"></span>
+    </section>
 
     <script src="script.js" type="module"></script>
 </body>
