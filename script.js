@@ -14,6 +14,8 @@ const closeSaveOverlay = document.getElementById(`closeSave`);
 
 const playerStats = document.querySelectorAll(".playerStat");
 const enemyStatBar = document.getElementById(`enemyStats`);
+const gameHistory = document.getElementById(`gameHistory`);
+const gameHistoryText = document.getElementById(`gameHistoryText`)
 
 let isReading = true;
 let isCombat = false;
@@ -69,6 +71,7 @@ function generateOptions(choices){
     if (isReading) return;
     if (isCombat) return;
 
+    console.log(choices)
 
     gameText.classList.add(`notActive`);
     options.classList.remove(`notActive`);
@@ -83,6 +86,8 @@ function generateOptions(choices){
         let option = document.createElement("li"); //creating choice element
         option.innerHTML = `<button>${choice.text}</button>`; //including button
         options.appendChild(option);
+        console.log(`${choices[index].text}`)
+
 
         option.addEventListener("click", () => {
             combatExists(choice); //if combat exists, load combat screen
@@ -108,10 +113,18 @@ function generateOptions(choices){
                     })
                     return; 
                 } else{
-                    currentPlayer.decisions.push(`${choice.text}`); //update Player history
+                    currentPlayer.decisions.push(`${choices[index].text}`); //update Player history
                     console.log(currentPlayer)
+
+
+                    let historyText = document.createElement(`p`); //updating save overlay
+                    historyText.innerHTML = `${choices[index].text}`;
+                    gameHistoryText.appendChild(historyText);
+
+                    console.log(`${choice}`);
                 }
 
+                
             }
             
         })
@@ -131,21 +144,22 @@ export function advanceText(event){ //array of story chunk
     options.innerHTML = ``;
     gameText.innerHTML = `${event.text[clicks]}`; //insert into textbox
 
-    currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
     console.log(`Advance Text`)
+
+    if (clicks >= event.text.length){
+        return
+    } else {
+    currentPlayer.decisions.push(`${event.text[clicks]}`); //update Player history
+
+    let historyText = document.createElement(`p`);
+    historyText.innerHTML = `${event.text[clicks]}`;
+    gameHistoryText.appendChild(historyText);
+}
+
 }
 
 
-//save functions
-openSaveOverlay.addEventListener("click", () => {
-    document.getElementById("saveFiles").classList.remove("notActive");
-    document.getElementById("saveFiles").classList.add("saveActive");
-})
 
-closeSaveOverlay.addEventListener("click", ()=>{
-    document.getElementById("saveFiles").classList.add("notActive");
-    document.getElementById("saveFiles").classList.remove("saveActive");
-})
 
 console.log(saveFile);
 saveFile.forEach((file, index) => {
@@ -192,3 +206,54 @@ export function combatOver(){
 
 let enemy = new Enemy("Bob", [100,10,12,15,100], ``);
 console.log(enemy)
+
+//save functions
+openSaveOverlay.addEventListener("click", () => {
+    document.getElementById("saveFiles").classList.remove("notActive");
+    document.getElementById("saveFiles").classList.add("saveActive");
+})
+
+closeSaveOverlay.addEventListener("click", ()=>{
+    document.getElementById("saveFiles").classList.add("notActive");
+    document.getElementById("saveFiles").classList.remove("saveActive");
+})
+
+//Nav Event listeners
+document.querySelector(`#exit-nav > button`).addEventListener("click", ()=>{
+    window.location.reload();
+})
+
+//load overlay
+document.querySelector(`#load-nav > button`).addEventListener("click", () => {
+    document.getElementById("loadFiles").classList.remove("notActive");
+    document.getElementById("loadFiles").classList.add("loadActive");
+})
+
+document.querySelector(`#closeLoad`).addEventListener("click", ()=>{
+    document.getElementById("loadFiles").classList.add("notActive");
+    document.getElementById("loadFiles").classList.remove("loadActive");
+})
+
+//inventory
+document.querySelector(`#inventory-nav > button`).addEventListener("click", () => {
+    document.getElementById("inventory").classList.remove("notActive");
+    document.getElementById("inventory").classList.add("active");
+})
+
+document.querySelector(`#closeInventory`).addEventListener("click", ()=>{
+    document.getElementById("inventory").classList.add("notActive");
+    document.getElementById("inventory").classList.remove("active");
+})
+
+//history
+document.querySelector(`#history-nav > button`).addEventListener("click", () => {
+    gameHistory.classList.remove("notActive");
+    gameHistory.classList.add("active");
+})
+
+document.querySelector(`#closeHistory`).addEventListener("click", ()=>{
+    gameHistory.classList.add("notActive");
+    gameHistory.classList.remove("active");
+})
+
+
