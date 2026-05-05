@@ -133,7 +133,6 @@ nav {
 /*Hover and focus states with pen tip icon*/
 #gameText:hover,
 #gameText:focus {
-    color: #F9D357;
     transform: scale(1.1);
     outline: none;
     transition: 0.3s;
