@@ -55,9 +55,65 @@ export const story = {
         ],
 
         choices: [
-            { text: "Go back to sleep", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Take a walk outside to calm down", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Make some breakfast", nextStep: "day1Morning", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Go back to sleep", nextStep: "dailyT", impact: [0, 0, 0, 0, -2, -2], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Take a walk outside to calm down", nextStep: "dailyGA", impact: [2, 0, 0, 2, 2, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Make some breakfast", nextStep: "dailyGB", impact: [2, 1, 0, 5, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyW: {
+        background: '/backgrounds-png/training.png',
+        text: [
+            'You walk to the training center in the middle of town to train and workout after your dream.',
+            'In the middle of training a priest runs out of the church nearby and comes straight to you.'
+        ],
+
+        choices: [
+            { text: "[+5 HP, +5 STR, +2 FORT, +2 SPD]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyT: {
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you fall back into an uncomfortable slumber.',
+        ],
+
+        choices: [
+            { text: "[-2 FORT, -2 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyH: {
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you decide you want to read and calm down. In the middle of your book you are interrupted.',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +10 INT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyGA: {
+        background: '/backgrounds-png/village-General.png',
+        text: [
+            'To rejuvenate yourself after the terrible dream you decide to take a walk. You peacefully roam around town.',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +2 FORT, +2 SPD, +5 SAN]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ]
+    },
+
+    dailyGB: {
+        background: '/backgrounds-png/bedroom.png',
+        text: [
+            'After the nightmare you decide you want to make some breakfast. Yum!',
+        ],
+
+        choices: [
+            { text: "[+2 HP, +1 STR, +5 FORT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -406,8 +462,9 @@ export const story = {
             `[+2 FORT, -2 SAN — Received: Soldier's Boots +3 SPD]`
         ],
         choices: [
-            { text: "Begin your training at the barracks", nextStep: "w_trainingMontage", impact: [0, 0, 0, 2, 3, -2], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Ally Soldier', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_trainingMontage"
     },
 
     w_kingH: {
@@ -457,8 +514,10 @@ export const story = {
             `After four weeks of general training, Sir Edran presents you with a choice.`
         ],
         choices: [
-            { text: "Choose your specialization", nextStep: "w_classSelection", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Choose your specialization", nextStep: "w_classSelection", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Train More", nextStep: "mockBattle", impact: [10, 3, 0, 2, 3, -2], combat: true, enemyName: 'Ally Soldier', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_trainingMontage"
     },
 
     w_classSelection: {
@@ -952,7 +1011,7 @@ export const story = {
     h_scholarThalia: {
         background: "/backgrounds-png/church.png",
         text: [
-            `Sister Thalia's perspective is uncomfortable and necessary. She spent a year in Vorthane distributing food to people both kingdoms had decided did not matter`, 
+            `Sister Thalia's perspective is uncomfortable and necessary. She spent a year in Vorthane distributing food to people both kingdoms had decided did not matter`,
             `She came back with the kind of clarity that only comes from seeing a problem from the ground.`,
             `"Both kings use the prophecy as a weapon," she tells you. "They have been doing it for generations.`,
             `The goddess did not give you this mark so that a king could point to it and say 'follow me.'"`,
@@ -1773,14 +1832,15 @@ export const story = {
 
         choices: [
             { text: "Carry this knowledge forward", nextStep: "w_returnDecision", impact: [0, 0, 5, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]},
+        ]
+    },
 
-    mockBattle:{
+    mockBattle: {
         choices: [
-            {text: `Attack`},
-            {text: `Defend`},
-            {text: `Inventory`},
-            {text: `Run Away`, nextStep: `victory`}
+            { text: `Attack` },
+            { text: `Defend` },
+            { text: `Inventory` },
+            { text: `Run Away` }
         ],
         nextStep: `victory`
     },
@@ -1789,9 +1849,9 @@ export const story = {
         background: `/backgrounds-png/alley.png`,
         text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
         choices: [
-            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
-            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: true, enemyName: 'Gertrude', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
-            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Gertrude', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: `victory`
     },
@@ -1815,9 +1875,9 @@ export const story = {
         ],
 
         choices: [
-            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0,0,0,0,0,0]},
-            { text: `Load a save file`, combat: false, impact: [0,0,0,0,0,0] },
-            { text: `Go to home`, combat: false, impact: [0,0,0,0,0,0] }
+            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
+            { text: `Load a save file`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
+            { text: `Go to home`, combat: false, impact: [0, 0, 0, 0, 0, 0] }
         ]
     },
 }

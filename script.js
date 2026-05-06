@@ -34,7 +34,7 @@ newGame.addEventListener("click", ()=>{ //if user wants a new game, go back to i
     gameText.classList.remove(`notActive`);
     options.classList.add(`notActive`);
 
-    playerImpact(currentPlayer.stats); //update stats
+    playerImpact(currentPlayer.stats, currentPlayer); //update stats
     console.log(currentPlayer.stats);
 
     generateScene(currentScene);
@@ -68,6 +68,8 @@ function generateOptions(choices){
     if (isCombat) return;
 
 
+    options.innerHTML = ``; // clearing 
+    gameText.innerHTML = ``;
     gameText.classList.add(`notActive`);
     options.classList.remove(`notActive`);
 
@@ -83,7 +85,7 @@ function generateOptions(choices){
         options.appendChild(option);
 
         option.addEventListener("click", () => {
-            combatExists(choice); //if combat exists, load combat screen
+            combatExists(choice, currentPlayer); //if combat exists, load combat screen
             if(choice.combat) return;
             console.log(`option was clicked`);
 
@@ -95,7 +97,7 @@ function generateOptions(choices){
                 isReading = true; //clicking immediately allows click to advance to happen
 
                 currentScene = story[choice.nextStep]; //update scene
-                playerImpact(choice.impact); //impacting stats
+                playerImpact(choice.impact, currentPlayer); //impacting stats
 
                 advanceText(currentScene);
                 generateScene(currentScene);
