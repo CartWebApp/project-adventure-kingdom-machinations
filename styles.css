@@ -39,6 +39,7 @@ nav {
     flex-direction: column;
     align-items: center;
     background-image: url(images/rock-wall.png);
+    background-size: cover;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #5D685C;
@@ -132,7 +133,6 @@ nav {
 /*Hover and focus states with pen tip icon*/
 #gameText:hover,
 #gameText:focus {
-    color: #F9D357;
     transform: scale(1.1);
     outline: none;
     transition: 0.3s;
@@ -175,7 +175,7 @@ nav {
 
 #options button:hover,
 #options button:focus {
-    color: #F9D357;
+    color: #f0c023;
     transform: scale(1.1);
     padding-left: 30px;
     outline: none;

@@ -370,7 +370,7 @@ export const story = {
             `You ask what you should do.`,
             `"That depends on what you want." He picks the hammer back up. "But I'll tell you this—if you're going to do anything at all, you should know how to fight."`,
             `"You're welcome at my yard any morning."`,
-            `Sir Edran is now available as a mentor. Proceeding to train with him leads to the Wrath Route.`
+            //Sir Edran is now available as a mentor. Proceeding to train with him leads to the Wrath Route.
         ],
 
         choices: [
@@ -392,7 +392,7 @@ export const story = {
             `"You've been having the visions your whole life. Have they ever shown you a winner?"`,
             `You think about it. They haven't. Only the fighting. Only the fear.`,
             `"Aelara shows you what was," she says gently. "Not what must be again."`,
-            `Sister Maevis is now available as a mentor. Proceeding with her leads to the Holy Route.`
+            //`Sister Maevis is now available as a mentor. Proceeding with her leads to the Holy Route.`
         ],
 
         choices: [
@@ -415,7 +415,7 @@ export const story = {
             `"I know what the prophecy says. I know what you have on your chest. And I know that the King will use you as a weapon and discard you when the war is won." He pauses.`,
             `"There are people in Vorthane who believe the prophecy too. And they interpret it very differently."`,
             `He presses a small token into your hand—a plain copper disc with a mark you don't recognize—and walks away.`,
-            `Davan Cole is now available as a mentor. Following him leads to the Traitor Route.`
+            //`Davan Cole is now available as a mentor. Following him leads to the Traitor Route.`
         ],
 
         choices: [
@@ -462,8 +462,9 @@ export const story = {
             `He comes at you without further warning.`
         ],
         choices: [
-            { text: "Begin training", nextStep: "w_firstSpar", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: `w_firstSpar`
     },
 
     w_firstSpar: {
@@ -1885,9 +1886,8 @@ export const story = {
             {text: `Attack`},
             {text: `Defend`},
             {text: `Inventory`},
-            {text: `Run Away`, nextStep: `victory`}
+            {text: `Run Away`}
         ],
-        nextStep: `victory`
     },
 
     mockLeadUp: {
