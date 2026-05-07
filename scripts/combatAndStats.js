@@ -1,7 +1,7 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
 import {Player, Enemy, Item, Armor, Weapon} from "./classes.js";
 import {story} from "./story.js";
-import {advanceText, deathScene, generateScene, combatOver} from "../script.js";
+import {advanceText, deathScene, generateScene, combatOver, pullActivePlayer} from "../script.js";
 
 let currentScene = ``;
 let clicks = 0;
@@ -23,12 +23,18 @@ const enemyStatBar = document.getElementById(`enemyStats`);
 let isCombat = false;
 let isAlive = true;
 
-let currentPlayer = new Player(1, [100,5,5,5,5,100], [], [], [], []); //new Player
+let currentPlayer = pullActivePlayer(); //new Player
+console.log(currentPlayer)
 
 export function playerImpact(array){
+    currentPlayer = pullActivePlayer();
+
     playerStats.forEach((stat, index) => {
         let statNumber = Number(stat.innerHTML); //will access number in HTML span in list
         stat.innerHTML = `${statNumber + array[index]}`; //adds/subtracts story impact number to list
+
+        currentPlayer.stats[index] = statNumber + array[index];
+        localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
     })
 }
 
@@ -193,19 +199,31 @@ export function combatExists(choice){
             console.log(`COMBAT`);
             
             if (index === 0){ //attack
+                currentPlayer = pullActivePlayer();
+                console.log(currentPlayer);
+
                 attack(currentPlayer.stats, enemy.stats);
                 checkHealth();
+                localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
             }
             if (index === 1){ //defend
+                currentPlayer = pullActivePlayer();
+                console.log(currentPlayer);
+
                 defend(currentPlayer.stats, enemy.stats);
                 checkHealth();
+                localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
             }
             if (index === 2){ //inventory
                 //open inventory logic
             }
             if (index === 3){ //run away, change scene
+                currentPlayer = pullActivePlayer();
+                console.log(currentPlayer);
+                
                 combatOver();
                 console.log(`running away`)
+                localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
             }
         })
     })

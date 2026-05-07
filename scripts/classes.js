@@ -6,7 +6,13 @@ export class Player {
         this.armor = armor; //user item class
         this.inventory = inventory; //user item class
         this.decisions = decisions; //for player history
+
         this.clicks = 0;
+        this.isAlive = true;
+        this.isReading = true;
+        this.currentScene;
+        this.isPlaying = true;
+        this.isCombat = false;
     }
 }
 
