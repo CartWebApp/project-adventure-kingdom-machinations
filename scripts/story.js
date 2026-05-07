@@ -457,7 +457,7 @@ export const story = {
             `He comes at you without further warning.`
         ],
         choices: [
-            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: `w_firstSpar`
     },
