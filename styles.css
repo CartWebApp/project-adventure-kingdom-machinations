@@ -360,7 +360,7 @@ nav {
 .loadFile img {
     width: 90%;
     background-image: url(./backgrounds/death.jpg);
-    background-size: contain;
+    background-size: cover;
 }
 
 #closeSave,
