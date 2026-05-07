@@ -61,7 +61,7 @@ export const story = {
         ]
     },
 
-    dailyW:{
+    dailyW: {
         background: '/backgrounds-png/training.png',
         text: [
             'You walk to the training center in the middle of town to train and workout after your dream.',
@@ -69,51 +69,51 @@ export const story = {
         ],
 
         choices: [
-            { text: "[+5 HP, +5 STR, +2 FORT, +2 SPD]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: "[+5 HP, +5 STR, +2 FORT, +2 SPD]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
-    dailyT:{
+    dailyT: {
         background: '/backgrounds-png/bedroom.png',
         text: [
             'After the nightmare you fall back into an uncomfortable slumber.',
         ],
 
         choices: [
-            { text: "[-2 FORT, -2 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: "[-2 FORT, -2 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
-    dailyH:{
+    dailyH: {
         background: '/backgrounds-png/bedroom.png',
         text: [
             'After the nightmare you decide you want to read and calm down. In the middle of your book you are interrupted.',
         ],
 
         choices: [
-            { text: "[+2 HP, +10 INT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: "[+2 HP, +10 INT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
-    dailyGA:{
+    dailyGA: {
         background: '/backgrounds-png/village-General.png',
         text: [
             'To rejuvenate yourself after the terrible dream you decide to take a walk. You peacefully roam around town.',
         ],
 
         choices: [
-            { text: "[+2 HP, +2 FORT, +2 SPD, +5 SAN]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: "[+2 HP, +2 FORT, +2 SPD, +5 SAN]", nextStep: "day1MorningWGA", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
-    dailyGB:{
+    dailyGB: {
         background: '/backgrounds-png/bedroom.png',
         text: [
             'After the nightmare you decide you want to make some breakfast. Yum!',
         ],
 
         choices: [
-            { text: "[+2 HP, +1 STR, +5 FORT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: "[+2 HP, +1 STR, +5 FORT, +5 SAN]", nextStep: "day1MorningHTGB", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
 
@@ -134,16 +134,16 @@ export const story = {
         text: [
             'While outside, you approach the church, and you see someone waving at you.',
             'It was the Bishop. He was someone you often confided in when it came to trying to resolve your nightmares. He seemed strangely frantic.',
-            `“The Goddess has sent down a prophecy, and I'm confident it's you!”`,
-            `“The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!”`,
-            `“The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!”`,
-            `“No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!”`,
-            `“Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
+            `"The Goddess has sent down a prophecy, and I'm confident it's you!"`,
+            `"The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!"`,
+            `"The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!"`,
+            `"No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!"`,
+            `"Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
             `"It's possible that you died with many regrets, and your previous life is trying to convey that to you!"`,
             `"It won't be long before the King starts tracking you down."`,
             `"Either you join the church and learn more about the Goddess's plans, or you join the King to fight the other kingdom in the name of peace."`,
-            `“I don't know…it's all too soon. I'll need some time to think about it.”`,
-            `“Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church.”`,
+            `"I don't know…it's all too soon. I'll need some time to think about it."`,
+            `"Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church."`,
             `The bishop's words hang over your head like a storm cloud that refuses to pass. You leave him standing on the church steps and try to return to your life.`,
             `But Brenwall has changed. Or maybe you have. The royal soldiers in their black-and-gold livery are posted at the market entrance now.`,
             `People stop talking when you walk by. The church bells seem to ring a little longer than they used to.`,
@@ -159,16 +159,16 @@ export const story = {
             `*KNOCK KNOCK*`,
             `You quickly open the door.`,
             `It was bishop! He was someone you often confided in when it came to trying to resolve your constant visions of combat. He seemed strangely frantic.`,
-            `“The Goddess has sent down a prophecy, and I'm confident it's you!”`,
-            `“The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!”`,
-            `“The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!”`,
-            `“No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!”`,
-            `“Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
+            `"The Goddess has sent down a prophecy, and I'm confident it's you!"`,
+            `"The Goddess spoke of a 'person who had lived a previous life of battle' with 'a mark across their heart.' She also said that person would guide the world to peace!"`,
+            `"The kingdom is saved! The war with the other kingdom has been going on for far too long, and you've been ordained to save us!"`,
+            `"No way! That can't be me! Sure, I've had a birthmark on my left chest ever since I was born, but I've never even seen a battlefield before!"`,
+            `"Oh but you have! It explains your visions! Maybe you had a past life, and in that life, you were constantly in battle."`,
             `"It's possible that you died with many regrets, and your previous life is trying to convey that to you!"`,
             `"It won't be long before the King starts tracking you down."`,
             `"Either you join the church and learn more about the Goddess's plans, or you join the King to fight the other kingdom in the name of peace."`,
-            `“I don't know…it's all too soon. I'll need some time to think about it.”`,
-            `“Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church.”`,
+            `"I don't know…it's all too soon. I'll need some time to think about it."`,
+            `"Don't wait too long. The King is anxious to end the war already, but he might be okay with you joining the Holy Church."`,
             `The bishop's words hang over your head like a storm cloud that refuses to pass. You leave him standing in the doorway and try to return to your life.`,
             `But Brenwall has changed. Or maybe you have. The royal soldiers in their black-and-gold livery are posted at the market entrance now.`,
             `People stop talking when you walk by. The church bells seem to ring a little longer than they used to.`,
@@ -370,7 +370,6 @@ export const story = {
             `You ask what you should do.`,
             `"That depends on what you want." He picks the hammer back up. "But I'll tell you this—if you're going to do anything at all, you should know how to fight."`,
             `"You're welcome at my yard any morning."`,
-            //Sir Edran is now available as a mentor. Proceeding to train with him leads to the Wrath Route.
         ],
 
         choices: [
@@ -392,7 +391,6 @@ export const story = {
             `"You've been having the visions your whole life. Have they ever shown you a winner?"`,
             `You think about it. They haven't. Only the fighting. Only the fear.`,
             `"Aelara shows you what was," she says gently. "Not what must be again."`,
-            //`Sister Maevis is now available as a mentor. Proceeding with her leads to the Holy Route.`
         ],
 
         choices: [
@@ -415,7 +413,6 @@ export const story = {
             `"I know what the prophecy says. I know what you have on your chest. And I know that the King will use you as a weapon and discard you when the war is won." He pauses.`,
             `"There are people in Vorthane who believe the prophecy too. And they interpret it very differently."`,
             `He presses a small token into your hand—a plain copper disc with a mark you don't recognize—and walks away.`,
-            //`Davan Cole is now available as a mentor. Following him leads to the Traitor Route.`
         ],
 
         choices: [
@@ -449,8 +446,6 @@ export const story = {
             { text: "Find Davan Cole", nextStep: "day4T", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
-
-    // wrath route
 
     day4W: {
         background: "/backgrounds-png-enemies/training-sirDeran.png",
@@ -512,8 +507,9 @@ export const story = {
             `[+2 FORT, -2 SAN — Received: Soldier's Boots +3 SPD]`
         ],
         choices: [
-            { text: "Begin your training at the barracks", nextStep: "w_trainingMontage", impact: [0, 0, 0, 2, 3, -2], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Sir Edran', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_trainingMontage"
     },
 
     w_kingH: {
@@ -563,8 +559,9 @@ export const story = {
             `After four weeks of general training, Sir Edran presents you with a choice.`
         ],
         choices: [
-            { text: "Choose your specialization", nextStep: "w_classSelection", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Choose your specialization", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldier', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_classSelection"
     },
 
     w_classSelection: {
@@ -698,11 +695,12 @@ export const story = {
             `Rugol is a full forward position—real fighting, real losses. Zirnak—" He pauses. "I'd rather you weren't sent to Zirnak. But if you insist, I won't stop you."`
         ],
         choices: [
-            { text: "Torlol Outpost — light border patrol", nextStep: "w_outpostTorlol", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Hostels Outpost — regular skirmishes", nextStep: "w_outpostHostels", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Rugol Outpost —  intense combat", nextStep: "w_outpostRugol", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Zirnak Outpost —  heavy casualties", nextStep: "w_outpostZirnak", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Torlol Outpost — light border patrol", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Scouts', enemyStats: [20, 8, 10, 3, 30], enemyAppearance: `/backgrounds-png/forest-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Hostels Outpost — regular skirmishes", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Infantry', enemyStats: [30, 15, 20, 3, 50], enemyAppearance: `/backgrounds-png/town-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Rugol Outpost — intense combat", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Regulars', enemyStats: [40, 25, 35, 4, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Zirnak Outpost — heavy casualties", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Elite', enemyStats: [50, 40, 50, 5, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_outpostTorlol"
     },
 
     w_outpostTorlol: {
@@ -812,10 +810,11 @@ export const story = {
             `"I was told to expect someone like you," he says. His voice is quieter than you expected.`
         ],
         choices: [
-            { text: "Attack immediately—end this before it complicates itself", nextStep: "w_kaelFight", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack immediately—end this before it complicates itself", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael', enemyStats: [60, 35, 45, 6, 100], enemyAppearance: `/backgrounds-png-enemies/battle-vision-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Ask him what he knows about the prophecy", nextStep: "w_kaelTalk", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Tell him you're not here to fight—propose something else", nextStep: "w_kaelAlliance", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+        ],
+        nextStep: "w_kaelFight"
     },
 
     w_kaelFight: {
@@ -846,8 +845,9 @@ export const story = {
             `[+8 INT, +5 SAN]`
         ],
         choices: [
-            { text: "Fight your way back together, present both kingdoms with proof", nextStep: "w_fightBack", impact: [0, 0, 8, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Fight your way back together, present both kingdoms with proof", nextStep: "mockBattle", impact: [0, 0, 8, 0, 0, 5], combat: true, enemyName: 'Border Guards', enemyStats: [30, 18, 25, 4, 60], enemyAppearance: `/backgrounds-png-enemies/battle-vision-intro.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_fightBack"
     },
 
     w_kaelAlliance: {
@@ -862,8 +862,9 @@ export const story = {
             `[+6 INT, +4 SAN]`
         ],
         choices: [
-            { text: "Fight your way back to Aldenmere together", nextStep: "w_fightBack", impact: [0, 0, 6, 0, 0, 4], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Fight your way back together, present both kingdoms with proof", nextStep: "mockBattle", impact: [0, 0, 6, 0, 0, 4], combat: true, enemyName: 'Border Guards', enemyStats: [30, 18, 25, 4, 60], enemyAppearance: `/backgrounds-png-enemies/battle-vision-intro.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_fightBack"
     },
 
     w_fightBack: {
@@ -874,8 +875,9 @@ export const story = {
             `[+5 STR, +4 SPD, -20 SAN]`
         ],
         choices: [
-            { text: "Return to Aldenmere and face the king", nextStep: "w_returnDecision", impact: [0, 5, 0, 0, 4, -20], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Return to Aldenmere and face the king", nextStep: "mockBattle", impact: [0, 5, 0, 0, 4, -20], combat: true, enemyName: 'Vorthane Pursuers', enemyStats: [35, 22, 30, 4, 70], enemyAppearance: `/backgrounds-png-enemies/battle-vision-intro.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "w_returnDecision"
     },
 
     w_reportKing: {
@@ -981,7 +983,7 @@ export const story = {
             `You make a decision. The details are not something history records with full accuracy.`,
             `What is recorded is that King Hadvar died in his private chambers of an apparent heart condition, and that the Chosen of Aelara assumed a regent's council pending a new governance structure.`,
             `You build the alliance. It takes years longer without the symbolic weight of a king behind it, but what it lacks in ceremony it gains in sincerity. Two kingdoms, no kings.`,
-            `— ENDING: THE THRONEYOU DIDN'T WANT —`,
+            `— ENDING: THE THRONE YOU DIDN'T WANT —`,
             `You govern for eleven years before transitioning power to a council. You are, by most accounts, decent at it.`,
             `The visions visit you one last time the night before you die—but this time, there is no fear in them.`
         ],
@@ -989,8 +991,6 @@ export const story = {
             { text: "Begin again", nextStep: "intro", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
-
-    // holy route
 
     day4H: {
         background: "/backgrounds-png-enemies/church-friend.png",
@@ -1020,7 +1020,6 @@ export const story = {
         ]
     },
 
-    // scholar
 
     h_scholarBegin: {
         background: "/backgrounds-png-enemies/church-friend.png",
@@ -1058,7 +1057,7 @@ export const story = {
     h_scholarThalia: {
         background: "/backgrounds-png/church.png",
         text: [
-            `Sister Thalia's perspective is uncomfortable and necessary. She spent a year in Vorthane distributing food to people both kingdoms had decided did not matter`, 
+            `Sister Thalia's perspective is uncomfortable and necessary. She spent a year in Vorthane distributing food to people both kingdoms had decided did not matter.`,
             `She came back with the kind of clarity that only comes from seeing a problem from the ground.`,
             `"Both kings use the prophecy as a weapon," she tells you. "They have been doing it for generations.`,
             `The goddess did not give you this mark so that a king could point to it and say 'follow me.'"`,
@@ -1110,8 +1109,6 @@ export const story = {
             { text: "Answer Sister Maevis's summons to the Hearthstone Cathedral", nextStep: "h_cathedralConvergence", impact: [0, 0, 4, 2, 0, 4], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
-
-    // holy warrior
 
     h_holyWarriorBegin: {
         background: "/backgrounds-png-enemies/training-soldiers.png",
@@ -1295,14 +1292,15 @@ export const story = {
             `[+6 STR, +4 FORT, +3 SPD, -18 SAN]`
         ],
         choices: [
-            { text: "Answer the pull — go to the Hearthstone Cathedral", nextStep: "h_cathedralConvergence", impact: [0, 6, 0, 4, 3, -18], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Answer the pull — go to the Hearthstone Cathedral", nextStep: "mockBattle", impact: [0, 6, 0, 4, 3, -18], combat: true, enemyName: 'Vorthane Raiders', enemyStats: [30, 15, 20, 3, 55], enemyAppearance: `/backgrounds-png/town-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+        nextStep: "h_cathedralConvergence"
     },
 
     h_aidWorkerBegin: {
         background: "/backgrounds-png-enemies/church-friend.png",
         text: [
-            `You go among the people. Brenwall's church has a small network of aid stations along the border—place`,
+            `You go among the people. Brenwall's church has a small network of aid stations along the border—places`,
             `where displaced civilians can find food, medicine, and a few days of safety before moving on.`,
             `You work these stations. You listen more than you speak. You learn things about the war that soldiers and kings never hear.`,
             `A Vorthane mother tells you her husband was conscripted two years ago and she has not had word of him since.`,
@@ -1314,8 +1312,6 @@ export const story = {
             { text: "Follow the mark — it burns stronger closer to the border", nextStep: "h_cathedralConvergence", impact: [0, 0, 8, 0, 0, 10], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ]
     },
-
-    // cathedral, all holy paths meet here
 
     h_cathedralConvergence: {
         background: "/backgrounds-png-enemies/church-basement-kael.png",
@@ -1332,10 +1328,11 @@ export const story = {
             `One must end."`
         ],
         choices: [
-            { text: "Attack Kael", nextStep: "h_cathedralAttack", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack Kael", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael of the Ashen Blade', enemyStats: [60, 35, 45, 6, 100], enemyAppearance: `/backgrounds-png-enemies/church-basement-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Sacrifice yourself", nextStep: "h_cathedralSacrifice", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Argue against the goddess", nextStep: "h_cathedralArgue", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+        ],
+        nextStep: "h_cathedralAttack"
     },
 
     h_cathedralAttack: {
@@ -1442,8 +1439,6 @@ export const story = {
         ]
     },
 
-    // traitor route
-
     day4T: {
         background: "/backgrounds-png/alley.png",
         text: [
@@ -1498,10 +1493,11 @@ export const story = {
             `The Vorthane border patrol finds you within the first hour. Whether this is bad luck or Davan's plan is unclear. He has, at this point, disappeared.`
         ],
         choices: [
-            { text: "Try to fight your way free", nextStep: "t_captureW", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Try to fight your way free", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Border Patrol', enemyStats: [25, 12, 15, 3, 45], enemyAppearance: `/backgrounds-png-enemies/alley-cole.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Surrender and try to talk your way out", nextStep: "t_captureH", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Claim you were always on their side — you have come to join them", nextStep: "t_captureT", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+        ],
+        nextStep: "t_captureW"
     },
 
     t_captureW: {
@@ -1693,11 +1689,13 @@ export const story = {
             `After six weeks of training, Commander Sevik assigns you to an outpost. You have some say in where you go.`
         ],
         choices: [
-            { text: "Kandu Outpost — light border patrol", nextStep: "t_outpostKandu", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Ora Outpost — regular skirmishes with Aldenmere", nextStep: "t_outpostOra", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Ebote Outpost — constant fighting", nextStep: "t_outpostEbote", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Corinth Outpost — deep in trenches", nextStep: "t_outpostCorinth", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+            { text: "Kandu Outpost — light border patrol", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Scouts', enemyStats: [20, 8, 10, 3, 30], enemyAppearance: `/backgrounds-png/plains-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Ora Outpost — regular skirmishes with Aldenmere", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Infantry', enemyStats: [30, 15, 20, 3, 50], enemyAppearance: `/backgrounds-png/town-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Ebote Outpost — constant fighting", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Regulars', enemyStats: [40, 25, 35, 4, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Corinth Outpost — deep in trenches", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Elite', enemyStats: [50, 40, 50, 5, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+        ],
+
+        nextStep: "t_outpostKandu"
     },
 
     t_outpostKandu: {
@@ -1781,10 +1779,11 @@ export const story = {
             `You have to decide what to do with all of this.`
         ],
         choices: [
-            { text: "Push the war — press Aldenmere back with Vorthane force", nextStep: "t_endPushWar", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Push the war — press Aldenmere back with Vorthane force", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Forces', enemyStats: [50, 35, 45, 5, 90], enemyAppearance: `/backgrounds-png/battle-vision.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Work a treaty or alliance", nextStep: "t_endTreaty", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Undermine King Sorel from the inside", nextStep: "t_endUndermineKings", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]
+        ],
+        nextStep: "t_endPushWar"
     },
 
     t_endPushWar: {
@@ -1834,8 +1833,6 @@ export const story = {
         ]
     },
 
-    // vision events, triggered by sanity thresholds in the game logic
-
     vision_combat1: {
         background: "/backgrounds-png-enemies/battle-vision-kael.png",
         text: [
@@ -1876,17 +1873,17 @@ export const story = {
             `You wake up. Your chest aches. The mark feels warm rather than burning.`,
             `[+5 SAN, +5 INT]`
         ],
-
         choices: [
             { text: "Carry this knowledge forward", nextStep: "w_returnDecision", impact: [0, 0, 5, 0, 0, 5], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
-        ]},
+        ]
+    },
 
-    mockBattle:{
+    mockBattle: {
         choices: [
-            {text: `Attack`},
-            {text: `Defend`},
-            {text: `Inventory`},
-            {text: `Run Away`}
+            { text: `Attack` },
+            { text: `Defend` },
+            { text: `Inventory` },
+            { text: `Run Away` }
         ],
     },
 
@@ -1894,9 +1891,9 @@ export const story = {
         background: `/backgrounds-png/alley.png`,
         text: [`YOU DARE LOOK AT ME?`, `LET'S DO THIS!`, `I AM DANGEROUS!`],
         choices: [
-            {text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
-            {text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0,0,0,0,0,0], combat: true, enemyName: 'Gertrude', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []},
-            {text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: []}
+            { text: `Calm Down`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: `LET'S DO THIS`, nextStep: `mockBattle`, impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Gertrude', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png/training.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: `I'm Outta Here!`, nextStep: ``, impact: [], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: `victory`
     },
@@ -1918,11 +1915,10 @@ export const story = {
             `Seems like you ran out of health...`,
             `RIP`
         ],
-
         choices: [
-            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0,0,0,0,0,0]},
-            { text: `Load a save file`, combat: false, impact: [0,0,0,0,0,0] },
-            { text: `Go to home`, combat: false, impact: [0,0,0,0,0,0] }
+            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
+            { text: `Load a save file`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
+            { text: `Go to home`, combat: false, impact: [0, 0, 0, 0, 0, 0] }
         ]
     },
 }
