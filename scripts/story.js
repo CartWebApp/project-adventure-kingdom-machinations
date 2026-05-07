@@ -507,7 +507,7 @@ export const story = {
             `[+2 FORT, -2 SAN — Received: Soldier's Boots +3 SPD]`
         ],
         choices: [
-            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Sir Edran', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Sir Edran', enemyStats: [25, 20, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_trainingMontage"
     },
@@ -559,7 +559,7 @@ export const story = {
             `After four weeks of general training, Sir Edran presents you with a choice.`
         ],
         choices: [
-            { text: "Choose your specialization", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldier', enemyStats: [25, 200, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Choose your specialization", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldier', enemyStats: [25, 20, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_classSelection"
     },
