@@ -1,5 +1,5 @@
 export class Player {
-    constructor(saveNumber, stats, weapons, armor, inventory, decisions){
+    constructor(saveNumber, stats, weapons, armor, inventory, decisions) {
         this.saveNumber = saveNumber; //for save file
         this.stats = stats; //array: [HP, STR, INT, FORT, SPD, SAN]
         this.weapons = weapons; //user item class
@@ -17,7 +17,7 @@ export class Player {
 }
 
 export class Enemy {
-    constructor(name, stats, appearance){
+    constructor(name, stats, appearance) {
         this.name = name || `` //name
         this.stats = stats; //array: [HP, STR, INT, FORT, SPD]
         this.appearance = appearance || ``; //scene url
@@ -25,7 +25,7 @@ export class Enemy {
 }
 
 export class Item {
-    constructor(name, description, stats, appearance){
+    constructor(name, description, stats, appearance) {
         this.name = name || '';
         this.description = description || "";
         this.stats = stats || [];
@@ -34,7 +34,7 @@ export class Item {
 }
 
 export class Armor {
-    constructor(name, description, stats, appearance){
+    constructor(name, description, stats, appearance) {
         this.name = name || '';
         this.description = description || "";
         this.stats = stats || [];
@@ -43,7 +43,7 @@ export class Armor {
 }
 
 export class Weapon {
-    constructor(name, description, stats, appearance){
+    constructor(name, description, stats, appearance) {
         this.name = name || '';
         this.description = description || "";
         this.stats = stats || [];
@@ -51,4 +51,4 @@ export class Weapon {
     }
 }
 
-const newPlayer =  new Player(1, [1,2,3,4,5], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], [new Item("exe", "new", [1,1,1,1,1], "")], ["intro", "intro2W"]);
+const newPlayer = new Player(1, [1, 2, 3, 4, 5], [new Item("exe", "new", [1, 1, 1, 1, 1], "")], [new Item("exe", "new", [1, 1, 1, 1, 1], "")], [new Item("exe", "new", [1, 1, 1, 1, 1], "")], ["intro", "intro2W"]);

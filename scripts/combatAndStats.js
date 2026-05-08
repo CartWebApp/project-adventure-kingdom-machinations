@@ -1,7 +1,7 @@
 //order for stats is HP, STR, INT, FORT, SPD, and Sanity
-import {Player, Enemy, Item, Armor, Weapon} from "./classes.js";
-import {story} from "./story.js";
-import {advanceText, deathScene, generateScene, combatOver, pullActivePlayer} from "../script.js";
+import { Player, Enemy, Item, Armor, Weapon } from "./classes.js";
+import { story } from "./story.js";
+import { advanceText, deathScene, generateScene, combatOver, pullActivePlayer } from "../script.js";
 
 let currentScene = ``;
 let clicks = 0;
@@ -26,7 +26,7 @@ let isAlive = true;
 let currentPlayer = pullActivePlayer(); //new Player
 console.log(currentPlayer)
 
-export function playerImpact(array){
+export function playerImpact(array) {
     currentPlayer = pullActivePlayer();
 
     playerStats.forEach((stat, index) => {
@@ -38,7 +38,7 @@ export function playerImpact(array){
     })
 }
 
-export function enemyImpact(array){
+export function enemyImpact(array) {
     enemyStats.forEach((stat, index) => {
         let statNumber = Number(stat.innerHTML);
         console.log(`this is the enemy stats: ${array}`)
@@ -46,9 +46,9 @@ export function enemyImpact(array){
     })
 }
 
-export function attack(playerStatsArray, enemyStatsArray){ //0: HP, 1: STR, 2: INT, 3: FORT, 4: SPD, 5: SAN
-let enemyAtk = Math.ceil(.75 * enemyStatsArray[1] - .5 * playerStatsArray[3]); //subtract (75% of STR minus 50% FORT) from player HP
-let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]); //subtract (85% STR minus 25% FORT) from enemy HP
+export function attack(playerStatsArray, enemyStatsArray) { //0: HP, 1: STR, 2: INT, 3: FORT, 4: SPD, 5: SAN
+    let enemyAtk = Math.ceil(.75 * enemyStatsArray[1] - .5 * playerStatsArray[3]); //subtract (75% of STR minus 50% FORT) from player HP
+    let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]); //subtract (85% STR minus 25% FORT) from enemy HP
 
     if (enemyStatsArray[4] >= 1.25 * playerStatsArray[4]) { //enemy attack first if 1.25x faster
         playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
@@ -56,7 +56,7 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
             stat.innerHTML = `${playerStatsArray[index]}`;
         })
 
-        if (playerStatsArray[0] <= 0){
+        if (playerStatsArray[0] <= 0) {
             isAlive = false; //death
         } else {
             enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
@@ -64,7 +64,7 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
                 stat.innerHTML = `${enemyStatsArray[index]}`;
             })
 
-            if (enemyStatsArray[0] <= 0){
+            if (enemyStatsArray[0] <= 0) {
                 isReading = true;//victory!
                 isCombat = false;
                 currentScene = story[currentScene.nextStep];
@@ -77,7 +77,7 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
             stat.innerHTML = `${enemyStatsArray[index]}`;
         })
 
-        if (enemyStatsArray[0] <= 0){
+        if (enemyStatsArray[0] <= 0) {
             isReading = true;//victory!
             isCombat = false;
             currentScene = story[currentScene.nextStep];
@@ -87,7 +87,7 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
             playerStats.forEach((stat, index) => { //player lose health
                 stat.innerHTML = `${playerStatsArray[index]}`;
             })
-            if (playerStatsArray[0] <= 0){
+            if (playerStatsArray[0] <= 0) {
                 isAlive = false; //death
             }
         }
@@ -102,8 +102,8 @@ let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]);
 }
 
 export function defend(playerStatsArray, enemyStatsArray) {
-let enemyAtk = Math.ceil(.45 * enemyStatsArray[1] - .8 * playerStatsArray[3]); //subtract (45% of STR minus 80% FORT) from player HP
-let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); //subtract (50% STR minus 25% FORT) from enemy HP
+    let enemyAtk = Math.ceil(.45 * enemyStatsArray[1] - .8 * playerStatsArray[3]); //subtract (45% of STR minus 80% FORT) from player HP
+    let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); //subtract (50% STR minus 25% FORT) from enemy HP
 
     if (enemyStatsArray[4] >= 1.25 * playerStatsArray[4]) { //enemy attack first if 1.25x faster
         playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
@@ -111,29 +111,29 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
             stat.innerHTML = `${playerStatsArray[index]}`;
         })
 
-        if (playerStatsArray[0] <= 0){
+        if (playerStatsArray[0] <= 0) {
             isAlive = false; //death
         } else {
             enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
             enemyStats.forEach((stat, index) => { //enemy lose health
                 stat.innerHTML = `${enemyStatsArray[index]}`;
             })
-            
-            if (enemyStatsArray[0] <= 0){
+
+            if (enemyStatsArray[0] <= 0) {
                 isReading = true;//victory!
                 isCombat = false;
                 currentScene = story[currentScene.nextStep];
                 combatOver();
             }
         }
-        
+
     } else { //player attack first
         enemyStatsArray[0] -= playerAtk > 0 ? playerAtk : 0;
         enemyStats.forEach((stat, index) => { //enemy lose health
             stat.innerHTML = `${enemyStatsArray[index]}`;
         })
 
-        if (enemyStatsArray[0] <= 0){
+        if (enemyStatsArray[0] <= 0) {
             isReading = true;//victory!
             isCombat = false;
             currentScene = story[currentScene.nextStep];
@@ -143,9 +143,9 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
             playerStats.forEach((stat, index) => { //player lose health
                 stat.innerHTML = `${playerStatsArray[index]}`;
 
-            if (playerStatsArray[0] <= 0){
-                isAlive = false; //death
-            }
+                if (playerStatsArray[0] <= 0) {
+                    isAlive = false; //death
+                }
 
             })
         }
@@ -159,14 +159,17 @@ let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); /
     return playerStatsArray, enemyStatsArray;
 }
 
-export function checkHealth(){
-    if(isAlive) return;
-    console.log('player is dead')
-
+export function checkHealth() {
+    const playerStatsArray = currentPlayer.stats;
+    if (playerStatsArray[0] <= 0 || playerStatsArray[5] <= 0) {
+        isAlive = false;
+    }
+    if (isAlive) return;
+    console.log('player is dead');
     deathScene();
 }
 
-export function combatExists(choice){
+export function combatExists(choice) {
     isCombat = choice.combat;
     if (!choice.combat) return;
 
@@ -174,7 +177,7 @@ export function combatExists(choice){
     isReading = false; //not reading
     let enemy = new Enemy(choice.enemyName, choice.enemyStats, choice.enemyAppearance); //enemy holder
     console.log(enemy);
-    
+
     background.style.setProperty('--scene-bg', `url(${enemy.appearance})`); //changes background
     console.log(`these are the enemy: ${enemy.stats}`)
 
@@ -197,8 +200,8 @@ export function combatExists(choice){
         option.addEventListener("click", () => {
             if (!isCombat) return;
             console.log(`COMBAT`);
-            
-            if (index === 0){ //attack
+
+            if (index === 0) { //attack
                 currentPlayer = pullActivePlayer();
                 console.log(currentPlayer);
 
@@ -206,7 +209,7 @@ export function combatExists(choice){
                 checkHealth();
                 localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
             }
-            if (index === 1){ //defend
+            if (index === 1) { //defend
                 currentPlayer = pullActivePlayer();
                 console.log(currentPlayer);
 
@@ -214,13 +217,13 @@ export function combatExists(choice){
                 checkHealth();
                 localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
             }
-            if (index === 2){ //inventory
+            if (index === 2) { //inventory
                 //open inventory logic
             }
-            if (index === 3){ //run away, change scene
+            if (index === 3) { //run away, change scene
                 currentPlayer = pullActivePlayer();
                 console.log(currentPlayer);
-                
+
                 combatOver();
                 console.log(`running away`)
                 localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
