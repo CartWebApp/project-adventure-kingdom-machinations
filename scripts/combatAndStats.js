@@ -222,6 +222,7 @@ export function combatExists(choice) {
             }
             if (index === 3) { //run away, change scene
                 currentPlayer = pullActivePlayer();
+                playerImpact(choice.impact); // makes the JS read the impacted stats, mockBattle -15 SAN if run away
                 console.log(currentPlayer);
 
                 combatOver();

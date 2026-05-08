@@ -1883,7 +1883,7 @@ export const story = {
             { text: `Attack` },
             { text: `Defend` },
             { text: `Inventory` },
-            { text: `Run Away` }
+            { text: `Run Away`, impact: [0, 0, 0, 0, 0, -15]}
         ],
     },
 
@@ -1916,7 +1916,7 @@ export const story = {
             `RIP`
         ],
         choices: [
-            { text: `Restart your attempt`, nextStep: `intro`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
+            { text: `Restart your attempt`, nextStep: 'intro', combat: false, impact: [0, 0, 0, 0, 0, 0] },
             { text: `Load a save file`, combat: false, impact: [0, 0, 0, 0, 0, 0] },
             { text: `Go to home`, combat: false, impact: [0, 0, 0, 0, 0, 0] }
         ]
