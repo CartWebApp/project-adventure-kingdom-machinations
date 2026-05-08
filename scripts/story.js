@@ -457,7 +457,7 @@ export const story = {
             `He comes at you without further warning.`
         ],
         choices: [
-            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [50, 15, 4, 30, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [50, 15, 10, 30, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: `w_firstSpar`
     },
@@ -507,7 +507,7 @@ export const story = {
             `[+2 FORT, -2 SAN — Received: Soldier's Boots +3 SPD]`
         ],
         choices: [
-            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldiers', enemyStats: [25, 25, 50, 30, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldiers', enemyStats: [25, 25, 15, 30, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_trainingMontage"
     },
@@ -559,7 +559,7 @@ export const story = {
             `After four weeks of general training, Sir Edran presents you with a choice.`
         ],
         choices: [
-            { text: "Choose your specialization", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldier', enemyStats: [25, 20, 50, 20, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Choose your specialization", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldier', enemyStats: [25, 20, 15, 20, 50], enemyAppearance: `/backgrounds-png-enemies/training-soldiers.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_classSelection"
     },
@@ -697,8 +697,8 @@ export const story = {
         choices: [
             { text: "Torlol Outpost — light border patrol", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Scouts', enemyStats: [40, 8, 10, 10, 30], enemyAppearance: `/backgrounds-png/forest-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Hostels Outpost — regular skirmishes", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Infantry', enemyStats: [60, 15, 20, 12, 50], enemyAppearance: `/backgrounds-png/town-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Rugol Outpost — intense combat", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Regulars', enemyStats: [80, 25, 35, 16, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Zirnak Outpost — heavy casualties", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Elite', enemyStats: [100, 40, 50, 20, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Rugol Outpost — intense combat", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Regulars', enemyStats: [80, 25, 20, 16, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Zirnak Outpost — heavy casualties", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Vorthane Elite', enemyStats: [100, 40, 30, 20, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_outpostTorlol"
     },
@@ -810,7 +810,7 @@ export const story = {
             `"I was told to expect someone like you," he says. His voice is quieter than you expected.`
         ],
         choices: [
-            { text: "Attack immediately—end this before it complicates itself", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael', enemyStats: [60, 35, 45, 40, 100], enemyAppearance: `/backgrounds-png-enemies/battle-vision-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack immediately—end this before it complicates itself", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael', enemyStats: [60, 35, 40, 40, 100], enemyAppearance: `/backgrounds-png-enemies/battle-vision-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Ask him what he knows about the prophecy", nextStep: "w_kaelTalk", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Tell him you're not here to fight—propose something else", nextStep: "w_kaelAlliance", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
@@ -1691,8 +1691,8 @@ export const story = {
         choices: [
             { text: "Kandu Outpost — light border patrol", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Scouts', enemyStats: [40, 8, 10, 10, 30], enemyAppearance: `/backgrounds-png/plains-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Ora Outpost — regular skirmishes with Aldenmere", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Infantry', enemyStats: [60, 15, 20, 12, 50], enemyAppearance: `/backgrounds-png/town-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Ebote Outpost — constant fighting", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Regulars', enemyStats: [80, 25, 35, 16, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
-            { text: "Corinth Outpost — deep in trenches", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Elite', enemyStats: [100, 40, 50, 20, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Ebote Outpost — constant fighting", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Regulars', enemyStats: [80, 25, 20, 16, 75], enemyAppearance: `/backgrounds-png/jungle-outpost.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Corinth Outpost — deep in trenches", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Elite', enemyStats: [100, 40, 30, 20, 100], enemyAppearance: `/backgrounds-png/major-fight.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
 
         nextStep: "t_outpostKandu"
@@ -1779,7 +1779,7 @@ export const story = {
             `You have to decide what to do with all of this.`
         ],
         choices: [
-            { text: "Push the war — press Aldenmere back with Vorthane force", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Forces', enemyStats: [50, 35, 45, 60, 90], enemyAppearance: `/backgrounds-png/battle-vision.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Push the war — press Aldenmere back with Vorthane force", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Aldenmere Forces', enemyStats: [50, 35, 35, 60, 90], enemyAppearance: `/backgrounds-png/battle-vision.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Work a treaty or alliance", nextStep: "t_endTreaty", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Undermine King Sorel from the inside", nextStep: "t_endUndermineKings", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
