@@ -457,7 +457,7 @@ export const story = {
             `He comes at you without further warning.`
         ],
         choices: [
-            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [25, 2, 4, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin training", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Edran', enemyStats: [25, 15, 4, 10, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: `w_firstSpar`
     },
@@ -507,7 +507,7 @@ export const story = {
             `[+2 FORT, -2 SAN — Received: Soldier's Boots +3 SPD]`
         ],
         choices: [
-            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Sir Edran', enemyStats: [25, 20, 50, 2, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
+            { text: "Begin your training at the barracks", nextStep: "mockBattle", impact: [0, 0, 0, 2, 3, -2], combat: true, enemyName: 'Soldiers', enemyStats: [25, 25, 50, 5, 50], enemyAppearance: `/backgrounds-png-enemies/training-sirDeran.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
         nextStep: "w_trainingMontage"
     },
@@ -1328,7 +1328,7 @@ export const story = {
             `One must end."`
         ],
         choices: [
-            { text: "Attack Kael", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael of the Ashen Blade', enemyStats: [60, 35, 45, 6, 100], enemyAppearance: `/backgrounds-png-enemies/church-basement-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
+            { text: "Attack Kael", nextStep: "mockBattle", impact: [0, 0, 0, 0, 0, 0], combat: true, enemyName: 'Kael of the Ashen Blade', enemyStats: [60, 55, 45, 30, 100], enemyAppearance: `/backgrounds-png-enemies/church-basement-kael.png`, gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Sacrifice yourself", nextStep: "h_cathedralSacrifice", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] },
             { text: "Argue against the goddess", nextStep: "h_cathedralArgue", impact: [0, 0, 0, 0, 0, 0], combat: false, enemy: [], gainItem: false, gainWeapon: false, gainArmor: false, item: [], weapon: [], armor: [] }
         ],
