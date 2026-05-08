@@ -47,8 +47,8 @@ export function enemyImpact(array) {
 }
 
 export function attack(playerStatsArray, enemyStatsArray) { //0: HP, 1: STR, 2: INT, 3: FORT, 4: SPD, 5: SAN
-    let enemyAtk = Math.ceil(.75 * enemyStatsArray[1] - .5 * playerStatsArray[3]); //subtract (75% of STR minus 50% FORT) from player HP
-    let playerAtk = Math.ceil(.85 * playerStatsArray[1] - .25 * enemyStatsArray[3]); //subtract (85% STR minus 25% FORT) from enemy HP
+    let enemyAtk = Math.ceil(.75 * (enemyStatsArray[1] * (1 + enemyStatsArray[2] / 100)) - .5 * playerStatsArray[3]); //subtract (75% of STR minus 50% FORT) from player HP
+    let playerAtk = Math.ceil(.85 * (playerStatsArray[1] * (1 + playerStatsArray[2] / 100)) - .25 * enemyStatsArray[3]); //subtract (85% STR minus 25% FORT) from enemy HP
 
     if (enemyStatsArray[4] >= 1.25 * playerStatsArray[4]) { //enemy attack first if 1.25x faster
         playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
@@ -102,8 +102,8 @@ export function attack(playerStatsArray, enemyStatsArray) { //0: HP, 1: STR, 2: 
 }
 
 export function defend(playerStatsArray, enemyStatsArray) {
-    let enemyAtk = Math.ceil(.45 * enemyStatsArray[1] - .8 * playerStatsArray[3]); //subtract (45% of STR minus 80% FORT) from player HP
-    let playerAtk = Math.ceil(.5 * playerStatsArray[1] - .3 * enemyStatsArray[3]); //subtract (50% STR minus 25% FORT) from enemy HP
+    let enemyAtk = Math.ceil(.45 * (enemyStatsArray[1] * (1 + enemyStatsArray[2] / 100)) - .8 * playerStatsArray[3]); //subtract (45% of STR minus 80% FORT) from player HP and both str are multiplied by INT
+    let playerAtk = Math.ceil(.5 * (playerStatsArray[1] * (1 + playerStatsArray[2] / 100)) - .3 * enemyStatsArray[3]); //subtract (50% STR minus 25% FORT) from enemy HP
 
     if (enemyStatsArray[4] >= 1.25 * playerStatsArray[4]) { //enemy attack first if 1.25x faster
         playerStatsArray[0] -= enemyAtk > 0 ? enemyAtk : 0; //if attack less than 0, no damage
