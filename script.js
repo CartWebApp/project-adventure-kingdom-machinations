@@ -245,6 +245,11 @@ loadFiles.forEach((file, index) => {
 
         let playerFile = pullSaveFiles(); //pulling save files
 
+        if(playerFile[index].empty){
+            console.log(`wassup`);
+            return;
+        }
+
         console.log(playerFile[index])
         currentPlayer = playerFile[index]; //making current player = save file index
 
@@ -284,12 +289,12 @@ loadFiles.forEach((file, index) => {
 })
 
 function pullSaveFiles() {
-    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{}, {}, {}, {}, {}, {}];
+    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{empty: true}, {empty: true}, {empty: true}, {empty: true}, {empty: true}, {empty: true}];
     return saveFiles;
 }
 
 export function pullActivePlayer() {
-    let saveFiles = JSON.parse(localStorage.getItem("activePlayer")) || [{}, {}, {}, {}, {}, {}];
+    let saveFiles = JSON.parse(localStorage.getItem("activePlayer")) || [{empty: true}, {empty: true}, {empty: true}, {empty: true}, {empty: true}, {empty: true}];
     return saveFiles;
 }
 
