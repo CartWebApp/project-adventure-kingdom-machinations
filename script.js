@@ -4,7 +4,7 @@ import { playerImpact, enemyImpact, attack, defend, checkHealth, combatExists } 
 
 const background = document.querySelector(".border-container"); //background
 const newGame = document.getElementById("continue-game"); //will update later so that will check local browser storage for player JSON's. If empty, button will appear as new game
-const gameContinuation = document.getElementById("continue-game");
+const gameContinuation = document.getElementById("chooseSaveFile");
 
 const options = document.getElementById("options");
 const gameText = document.getElementById("gameText");
@@ -78,6 +78,8 @@ gameText.addEventListener("click", () => {
 
 export function generateScene(scene) { // adds background
     background.style.setProperty('--scene-bg', `url(${scene.background})`); //changes background
+    currentPlayer.background = scene.background;
+    localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //updating activePlayer
 }
 
 
@@ -108,11 +110,34 @@ function generateOptions(choices) {
         option.addEventListener("click", () => {
             combatExists(choice); //if combat exists, load combat screen
             if (choice.combat) return;
+            if (currentScene = `deathRIP` && index == 0 && !isAlive){ //clicking start over after dying
+                currentScene = story.intro;
+
+                currentPlayer = new Player(1, [100, 10, 10, 10, 10, 100], [], [], [], []); //new Player
+                currentPlayer.currentScene = story.intro;
+                localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
+
+                isPlaying = true;
+
+                document.getElementById("menuNavigation").style.display = `flex`;
+                gameText.classList.remove(`notActive`);
+                options.classList.add(`notActive`);
+
+                console.log(currentPlayer);
+                playerStats.forEach((stat, index) => {
+                    stat.innerHTML = `${currentPlayer.stats[index]}`; //reflecting stat numbers
+                })
+
+
+                generateScene(currentScene);
+                advanceText(currentScene);
+            }
 
             console.log(`option was clicked`);
 
-            if (!isAlive && index == 1) { //open inventory
-                //load a save file
+            if (!isAlive && index == 1) { //open load files during death scene
+                document.getElementById("loadFiles").classList.remove("notActive");
+                document.getElementById("loadFiles").classList.add("loadActive");
             } else if (!isAlive && index == 2) { //go to home
                 window.location.reload();
             } else {
@@ -121,6 +146,9 @@ function generateOptions(choices) {
 
                 currentScene = story[choice.nextStep]; //update scene
                 currentPlayer.currentScene = story[choice.nextStep];
+                localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
+
+                console.log(currentPlayer)
 
                 playerImpact(choice.impact); //impacting stats
                 currentPlayer = pullActivePlayer();
@@ -216,6 +244,8 @@ loadFiles.forEach((file, index) => {
     file.addEventListener(`click`, () => {
 
         let playerFile = pullSaveFiles(); //pulling save files
+
+        console.log(playerFile[index])
         currentPlayer = playerFile[index]; //making current player = save file index
 
         clicks = currentPlayer.clicks //updating clicks
@@ -227,6 +257,12 @@ loadFiles.forEach((file, index) => {
 
         gameHistoryText.innerHTML = ``; //resetting history
 
+        playerStats.forEach((stat, index) => {
+            stat.innerHTML = `${currentPlayer.stats[index]}`; //reflecting stat numbers
+        })
+
+        document.getElementById("menuNavigation").style.display = `flex`;
+
         currentPlayer.decisions.forEach(decision => { //adding history
             let historyText = document.createElement(`p`);
             historyText.innerHTML = `${decision}`;
@@ -235,6 +271,7 @@ loadFiles.forEach((file, index) => {
 
         localStorage.setItem("activePlayer", JSON.stringify(currentPlayer)); //saving active player to local storage
 
+        console.log(currentScene)
         //setting up scene
         generateScene(currentScene);
         advanceText(currentScene); //onto next text
@@ -304,14 +341,13 @@ function updatingSaveFiles(){
 
     saveFiles.forEach((file, index) => {
         console.log(file);
-        if(!file.background) return;
         const filebackground = document.querySelector(`#save${index} > button > img`); //changing save background
-        filebackground.style.backgroundImage = `url(${file.currentScene.background})`;
+        filebackground.style.backgroundImage = `url(.${file.background})`;
+
+        const loadbackground = document.querySelector(`#load${index} > button > img`); //changing save background
+        loadbackground.style.backgroundImage = `url(.${file.background})`;
     })
 }
-
-let enemy = new Enemy("Bob", [100,10,12,15,100], ``);
-console.log(enemy)
 
 //save functions
 openSaveOverlay.addEventListener("click", () => {
