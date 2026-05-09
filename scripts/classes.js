@@ -13,6 +13,7 @@ export class Player {
         this.currentScene;
         this.isPlaying = true;
         this.isCombat = false;
+        this.background;
     }
 }
 

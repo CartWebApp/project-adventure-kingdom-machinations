@@ -19,7 +19,7 @@ h1 {
     font-family: "Kings", cursive;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(70px, 7vw, 90px);
+    font-size: clamp(24px, 7vw, 60px);
     color: white;
     -webkit-text-stroke: 2px black;
     z-index: 11;
@@ -465,7 +465,7 @@ footer {
     position: absolute;
     bottom: 10px;
     left: 5px;
-    z-index: 3;
+    z-index: 0;
     font-family: "Kings", cursive;
     font-weight: 900;
     font-style: normal;
