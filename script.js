@@ -29,6 +29,7 @@ let currentScene = ``;
 let currentPlayer; //creating spot for player
 
 
+updatingSaveFiles();
 
 newGame.addEventListener("click", () => { //if user wants a new game, go back to intro. Note: will clear local storage.
     currentScene = story.intro;
@@ -48,6 +49,11 @@ newGame.addEventListener("click", () => { //if user wants a new game, go back to
 
     generateScene(currentScene);
     advanceText(currentScene);
+})
+
+gameContinuation.addEventListener("click", ()=>{
+    document.getElementById("loadFiles").classList.remove("notActive");
+    document.getElementById("loadFiles").classList.add("loadActive");
 })
 
 gameText.addEventListener("click", () => {
@@ -292,7 +298,19 @@ export function combatOver() {
     advanceText(currentScene);
 }
 
-let enemy = new Enemy("Bob", [100, 10, 12, 15, 100], ``);
+function updatingSaveFiles(){
+    let saveFiles = JSON.parse(localStorage.getItem("savedPlayers")) || [{},{},{},{},{},{}];
+    console.log(saveFiles);
+
+    saveFiles.forEach((file, index) => {
+        console.log(file);
+        if(!file.background) return;
+        const filebackground = document.querySelector(`#save${index} > button > img`); //changing save background
+        filebackground.style.backgroundImage = `url(${file.currentScene.background})`;
+    })
+}
+
+let enemy = new Enemy("Bob", [100,10,12,15,100], ``);
 console.log(enemy)
 
 //save functions
