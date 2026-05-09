@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-button{
+button {
     background: none;
     border: none;
 }
@@ -19,16 +19,17 @@ h1 {
     font-family: "Kings", cursive;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(40px, 7vw, 70px);
+    font-size: clamp(24px, 7vw, 60px);
     color: white;
     -webkit-text-stroke: 2px black;
     z-index: 11;
     text-align: center;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
+
 nav {
     display: flex;
     justify-content: center;
@@ -39,6 +40,7 @@ nav {
     flex-direction: column;
     align-items: center;
     background-image: url(images/rock-wall.png);
+    background-size: cover;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #5D685C;
@@ -106,7 +108,7 @@ nav {
 
 /*buttons*/
 #gameText,
-#options{
+#options {
     width: clamp(100px, 80%, 800px);
     position: relative;
     z-index: 2;
@@ -119,21 +121,19 @@ nav {
     z-index: 2;
     font-family: "Kings", cursive;
     font-size: clamp(24px, 5vw, 40px);
-    color: white;
-    -webkit-text-stroke: 1px black;
+    color: rgb(0, 0, 0);
     list-style-type: none;
     background: none;
     border: none;
     text-align: left;
     padding-left: 0;
-
+    text-shadow: 1px 1px 2px #010101;
 }
 
 
 /*Hover and focus states with pen tip icon*/
 #gameText:hover,
 #gameText:focus {
-    color: #F9D357;
     transform: scale(1.1);
     outline: none;
     transition: 0.3s;
@@ -149,12 +149,20 @@ nav {
 }
 
 @keyframes arrowBounceNotHover {
-    from {right: 30px}
-    50% {right: 40px}
-    to {right: 30px}
+    from {
+        right: 30px
+    }
+
+    50% {
+        right: 40px
+    }
+
+    to {
+        right: 30px
+    }
 }
 
-#gameText::after{
+#gameText::after {
     content: "";
     position: absolute;
     right: 30px;
@@ -176,7 +184,7 @@ nav {
 
 #options button:hover,
 #options button:focus {
-    color: #F9D357;
+    color: #f0c023;
     transform: scale(1.1);
     padding-left: 30px;
     outline: none;
@@ -199,7 +207,7 @@ nav {
 
 
 /*curtains*/
-#backgroundCurtains{
+#backgroundCurtains {
     display: flex;
     width: 100%;
     height: 100%;
@@ -209,23 +217,26 @@ nav {
     left: 0;
 }
 
-#curtain-left{
+#curtain-left {
     background-image: url(images/left-curtain.png);
     height: 100%;
     width: 270px;
-    background-size:cover;
+    background-size: cover;
 }
 
-#curtain-right{
+#curtain-right {
     background-image: url(images/right-curtain.png);
     height: 100%;
     width: 263px;
-    background-size:cover;
+    background-size: cover;
 }
 
 
 /*Save Files overlay*/
-#saveFiles {
+#saveFiles,
+#loadFiles,
+#gameHistory,
+#inventory {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -237,7 +248,10 @@ nav {
     overflow: hidden;
 }
 
-#saveFiles > header{
+#saveFiles>header,
+#loadFiles>header,
+#gameHistory>header,
+#inventory>header {
     position: relative;
     z-index: 1;
     font-size: clamp(28px, 5vw, 48px);
@@ -249,7 +263,10 @@ nav {
     width: clamp(300px, 85%, 750px);
 }
 
-#saveFiles > img {
+#saveFiles>img,
+#loadFiles>img,
+#gameHistory>img,
+#inventory>img {
     position: absolute;
     width: clamp(330px, 95vw, 1000px);
     height: 100%;
@@ -257,16 +274,57 @@ nav {
     z-index: 0;
 }
 
+#gameHistoryText {
+    position: relative;
+    width: clamp(230px, 80vw, 800px);
+    height: 60vh;
+    overflow-y: scroll;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    font-size: clamp(20px, 4.5vw, 36px);
+
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe9bc;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #79602f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f3f1f;
+}
+
+#gameHistoryText>p {
+    font-family: "Kings", cursive;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
 .notActive {
     display: none;
 }
 
-.saveActive {
+.saveActive,
+.loadActive,
+.active {
     display: flex;
 }
 
 
-#saveFiles>ul {
+#saveFiles>ul,
+#loadFiles>ul {
     display: grid;
     height: 75%;
     width: clamp(300px, 90%, 750px);
@@ -278,36 +336,46 @@ nav {
     z-index: 1;
 }
 
-.file{
+.file,
+.loadFile {
     height: max-content;
 }
 
-.file > button:hover{
+.file>button:hover,
+.loadFile>button:hover {
     cursor: pointer;
 }
 
-.file > button:focus{
+.file>button:focus,
+.loadFile>button:focus {
     outline: none;
 }
 
-.file > button:hover > img,
-.file > button:focus > img{
+.file>button:hover>img,
+.file>button:focus>img,
+.loadFile>button:hover>img,
+.loadFile>button:focus>img {
     box-shadow: 0px 0px 2px 1px red;
 }
 
-.file button {
+.file button,
+.loadFile button {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.file img {
+.file img,
+.loadFile img {
     width: 90%;
     background-image: url(./backgrounds/death.jpg);
-    background-size: contain;
+    background-size: cover;
 }
 
-#closeSave{
+#closeSave,
+#closeLoad,
+#closeHistory,
+#closeInventory {
     font-size: clamp(32px, 4vw, 32px);
 }
 
@@ -326,7 +394,7 @@ nav {
     list-style-type: none;
 }
 
-#nav-list button{
+#nav-list button {
     font-size: clamp(20px, 4vw, 28px);
     font-family: "Kings", cursive;
     font-weight: 700;
@@ -364,20 +432,24 @@ nav {
 #playerStats {
     background: black;
     width: 100%;
-    display: flex;
     justify-content: center;
     gap: clamp(4px, 2vw, 20px);
     padding: 5px 0;
     color: white;
+    display: flex;
     font-family: "Jacquard 24", cursive;
     list-style-type: none;
+}
+
+.noEnemy {
+    opacity: 0%;
 }
 
 #enemyStats li,
 #enemyStats span,
 #playerStats li,
 #enemyStats span {
-font-size: clamp(14px, 3vw, 24px);
+    font-size: clamp(14px, 3vw, 24px);
 }
 
 #enemyStats {
@@ -388,14 +460,28 @@ font-size: clamp(14px, 3vw, 24px);
     border-top: 4px solid red;
 }
 
+/*Footer*/
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    z-index: 0;
+    font-family: "Kings", cursive;
+    font-weight: 900;
+    font-style: normal;
+    font-size: clamp(30px, 5vw, 40px);
+    color: #f0c023;
+    -webkit-text-stroke: .5px black;
+    margin: 0;
+}
 
 
 @media screen and (max-width: 600px) {
-    #curtain-left{
+    #curtain-left {
         background-image: url(./images/mini-left-curtain.png);
     }
-    
-    #curtain-right{
+
+    #curtain-right {
         background-image: url(./images/mini-right-curtain.png);
     }
 }
